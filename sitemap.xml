@@ -5,18 +5,23 @@
   <!-- MAIN PAGE -->
   <url>
     <loc>https://thebacksidehouse.com/</loc>
-    <lastmod>2026-01-31</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
 
     <!-- ========================================== -->
     <!-- CORE STRUCTURE IMAGES                      -->
     <!-- ========================================== -->
-    
+
     <image:image>
       <image:loc>https://thebacksidehouse.com/img/background-desktop.webp</image:loc>
       <image:title>The Backside House - Women Only Hostel Tamarindo</image:title>
       <image:caption>Your safe haven in paradise, Tamarindo, Costa Rica.</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/background-mobile.webp</image:loc>
+      <image:title>The Backside House - Women Only Hostel Tamarindo (Mobile)</image:title>
     </image:image>
 
     <image:image>
@@ -30,8 +35,13 @@
       <image:caption>Inclusive, safe, and fun surf lessons for women in Costa Rica.</image:caption>
     </image:image>
 
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/surflessons-mobile.webp</image:loc>
+      <image:title>Body Positive Surf Lessons for Women (Mobile)</image:title>
+    </image:image>
+
     <!-- ========================================== -->
-    <!-- GALLERY IMAGES (UPDATED WEBP)              -->
+    <!-- GALLERY IMAGES                              -->
     <!-- ========================================== -->
 
     <!-- Slide 1: Outdoor Kitchen -->
@@ -87,12 +97,36 @@
       <image:title>Women Only Shared Dormitory</image:title>
     </image:image>
 
+    <!-- ========================================== -->
+    <!-- EXPERIENCE STRIP IMAGES                     -->
+    <!-- ========================================== -->
+
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/chicasurf.webp</image:loc>
+      <image:title>Surf Experience in Tamarindo</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/bienestar.webp</image:loc>
+      <image:title>Wellness & Yoga at The Backside House</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/friendship.webp</image:loc>
+      <image:title>Friendship & Community at Women Only Hostel</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://thebacksidehouse.com/img/relaxbeach.webp</image:loc>
+      <image:title>Beach Relaxation in Tamarindo</image:title>
+    </image:image>
+
   </url>
 
   <!-- SURF CLASSES PAGE -->
   <url>
     <loc>https://thebacksidehouse.com/surfclass.html</loc>
-    <lastmod>2026-02-09</lastmod>
+    <lastmod>2026-02-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
 
