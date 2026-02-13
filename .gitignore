@@ -1,1 +1,40 @@
+# Dependencias
 node_modules/
+
+# CSS compilado (regenerar con: npm run build:css)
+css/styles.css
+css/styles.css.map
+
+# Archivos de backup/copia
+*copia*
+*.bak
+*~
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.eslintcache
+.stylelintcache
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Documentos (no son código fuente)
+*.docx
+*.xlsx
+
+# Configuración local de Claude Code
+.claude/settings.local.json
