@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      The Backside House | Women Only Hostel in Tamarindo, Costa Rica
+    </title>
+    <meta
+      name="description"
+      content="The first women-only hostel in Tamarindo. Safety, community, Surf Lessons, and good vibes in paradise."
+    />
+
+    <!-- OPEN GRAPH (Redes Sociales) -->
+    <meta
+      property="og:title"
+      content="The Backside House | Women Only Hostel in Tamarindo"
+    />
+    <meta
+      property="og:description"
+      content="The first women-only hostel in Tamarindo. Safety, community, Surf Lessons, and good vibes in paradise."
+    />
+    <meta
+      property="og:image"
+      content="https://thebacksidehouse.com/img/surflessons-desktop.webp"
+    />
+    <meta property="og:url" content="https://thebacksidehouse.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- CANONICAL & HREFLANG -->
+    <link rel="canonical" href="https://thebacksidehouse.com/" />
+    <link rel="alternate" hreflang="en" href="https://thebacksidehouse.com/" />
+    <link rel="alternate" hreflang="es" href="https://thebacksidehouse.com/" />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://thebacksidehouse.com/"
+    />
+
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://thebacksidehouse.com/img/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://thebacksidehouse.com/img/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://thebacksidehouse.com/img/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://thebacksidehouse.com/img/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="https://thebacksidehouse.com/site.webmanifest" />
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                pink: "#E8A3A8",
+                green: "#8CAF96",
+                dark: "#2D3748",
+                light: "#F7FAFC",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              display: ["Playfair Display", "serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- LUCIDE ICONS -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      /* Mobile menu transition */
+      #mobile-menu {
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 400px;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="bg-brand-light text-brand-dark font-sans antialiased">
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center">
+            <a href="#" class="text-2xl font-display font-bold text-brand-dark">
+              The Backside House
+            </a>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              href="#about"
+              class="text-brand-dark hover:text-brand-pink transition"
+              data-i18n="navAbout"
+              >About</a
+            >
+            <a
+              href="#surflessons"
+              class="text-brand-dark hover:text-brand-pink transition"
+              data-i18n="navSurf"
+              >Surf Lessons</a
+            >
+            <a
+              href="#rooms"
+              class="text-brand-dark hover:text-brand-pink transition"
+              data-i18n="navRooms"
+              >Rooms</a
+            >
+            <a
+              href="#contact"
+              class="px-5 py-2 bg-brand-pink text-white rounded-full hover:bg-opacity-90 transition font-medium"
+              data-i18n="navBook"
+              >Book Now</a
+            >
+
+            <!-- Language Toggle (Desktop) -->
+            <button
+              onclick="toggleLanguage()"
+              class="flex items-center space-x-1 focus:outline-none"
+              aria-label="Toggle Language"
+            >
+              <img
+                id="lang-display"
+                src="https://flagcdn.com/24x18/gb.png"
+                alt="English"
+                class="w-6 h-4 object-cover rounded shadow-sm"
+              />
+              <span id="lang-display-text" class="text-sm font-medium">EN</span>
+            </button>
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="md:hidden flex items-center">
+            <!-- Language Toggle (Mobile) -->
+            <button
+              onclick="toggleLanguage()"
+              class="mr-4 flex items-center space-x-1 focus:outline-none"
+            >
+              <img
+                id="lang-display-mobile"
+                src="https://flagcdn.com/24x18/gb.png"
+                alt="English"
+                class="w-6 h-4 object-cover rounded shadow-sm"
+              />
+              <span id="lang-display-mobile-text" class="text-sm font-medium"
+                >EN</span
+              >
+            </button>
+
+            <button
+              id="menu-btn"
+              class="text-brand-dark hover:text-brand-pink focus:outline-none"
+            >
+              <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Links -->
+      <div id="mobile-menu" class="md:hidden bg-white shadow-lg">
+        <a
+          href="#about"
+          class="block px-4 py-3 text-brand-dark hover:bg-gray-50"
+          onclick="closeMenu()"
+          data-i18n="navAbout"
+          >About</a
+        >
+        <a
+          href="#surflessons"
+          class="block px-4 py-3 text-brand-dark hover:bg-gray-50"
+          onclick="closeMenu()"
+          data-i18n="navSurf"
+          >Surf Lessons</a
+        >
+        <a
+          href="#rooms"
+          class="block px-4 py-3 text-brand-dark hover:bg-gray-50"
+          onclick="closeMenu()"
+          data-i18n="navRooms"
+          >Rooms</a
+        >
+        <a
+          href="#contact"
+          class="block px-4 py-3 text-brand-pink font-semibold hover:bg-gray-50"
+          onclick="closeMenu()"
+          data-i18n="navBook"
+          >Book Now</a
+        >
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src="https://thebacksidehouse.com/img/hero-desktop.webp"
+          alt="The Backside House Hostel"
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/30"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+        <h1
+          class="text-4xl md:text-6xl font-display font-bold mb-4 fade-in-up"
+          data-i18n="heroTitle"
+        >
+          Women Only Hostel
+        </h1>
+        <p
+          class="text-lg md:text-2xl mb-8 font-light fade-in-up"
+          style="animation-delay: 0.2s"
+          data-i18n="heroSubtitle"
+        >
+          Surf, yoga, and good vibes in Tamarindo, Costa Rica
+        </p>
+        <a
+          href="#rooms"
+          class="inline-block px-8 py-3 bg-brand-pink text-white rounded-full hover:bg-white hover:text-brand-pink transition duration-300 font-semibold fade-in-up shadow-lg"
+          style="animation-delay: 0.4s"
+          data-i18n="heroCta"
+        >
+          Book Your Stay
+        </a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="order-2 md:order-1">
+            <img
+              src="https://thebacksidehouse.com/img/about-us.webp"
+              alt="Community at The Backside House"
+              class="rounded-2xl shadow-xl w-full object-cover h-[400px] md:h-[500px]"
+            />
+          </div>
+          <div class="order-1 md:order-2">
+            <h2
+              class="text-3xl md:text-4xl font-display font-bold mb-6 text-brand-dark"
+              data-i18n="aboutTitle"
+            >
+              More Than a Hostel
+            </h2>
+            <p class="text-gray-600 mb-6 leading-relaxed" data-i18n="aboutText1">
+              We are the first women-only hostel in Tamarindo. A safe haven designed
+              for travelers, digital nomads, and surf enthusiasts.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed" data-i18n="aboutText2">
+              Located just a short walk from the beach, we offer the perfect balance
+              between relaxation and adventure. Join our community of empowered
+              women exploring the world.
+            </p>
+            <div class="flex space-x-4">
+              <div class="flex items-center space-x-2 text-brand-green">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span class="font-medium" data-i18n="featureSafe"
+                  >Safe Space</span
+                >
+              </div>
+              <div class="flex items-center space-x-2 text-brand-green">
+                <i data-lucide="wifi" class="w-6 h-6"></i>
+                <span class="font-medium" data-i18n="featureWifi"
+                  >High-Speed Wifi</span
+                >
+              </div>
+              <div class="flex items-center space-x-2 text-brand-green">
+                <i data-lucide="waves" class="w-6 h-6"></i>
+                <span class="font-medium" data-i18n="featureSurf"
+                  >Surf Vibes</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SURF LESSONS SECTION (SIMPLIFIED) -->
+    <section id="surflessons" class="py-24 bg-brand-light">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <i data-lucide="waves" class="w-12 h-12 text-brand-pink mx-auto mb-6"></i>
+            
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-6 text-brand-dark" data-i18n="surfTitle">
+                Surf School & Camp
+            </h2>
+            
+            <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed" data-i18n="surfMainDesc">
+                Dive into the waves of Tamarindo with our exclusive surf programs. Whether you are a complete beginner or looking to refine your technique, our certified female-friendly instructors will guide you every step of the way. We offer private lessons, group sessions, and complete Surf & Stay packages.
+            </p>
+
+            <!-- Icons Row -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-brand-green">
+                        <i data-lucide="award" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-semibold text-brand-dark" data-i18n="surfFeat1">Certified Coaches</h4>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-brand-green">
+                        <i data-lucide="users" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-semibold text-brand-dark" data-i18n="surfFeat2">Small Groups</h4>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-brand-green">
+                        <i data-lucide="video" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-semibold text-brand-dark" data-i18n="surfFeat3">Video Analysis</h4>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-brand-green">
+                        <i data-lucide="sun" class="w-7 h-7"></i>
+                    </div>
+                    <h4 class="font-semibold text-brand-dark" data-i18n="surfFeat4">All Levels</h4>
+                </div>
+            </div>
+
+            <a href="surfclass.html" class="inline-flex items-center justify-center px-8 py-3 bg-brand-green text-white rounded-full hover:bg-opacity-90 transition font-semibold text-lg shadow-lg group">
+                <span data-i18n="surfBtn">View Packages & Details</span>
+                <i data-lucide="arrow-right" class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ROOMS SECTION -->
+    <section id="rooms" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold mb-4 text-brand-dark"
+            data-i18n="roomsTitle"
+          >
+            Our Accommodation
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="roomsSubtitle">
+            Comfortable, clean, and air-conditioned dorms designed for privacy and
+            rest.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Room Card 1 -->
+          <div
+            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://thebacksidehouse.com/img/bed-dorm.webp"
+                alt="Shared Dorm"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 rounded-md text-sm font-semibold"
+                data-i18n="roomLabel1"
+              >
+                Shared Dorm
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-brand-dark"
+                data-i18n="roomName1"
+              >
+                6-Bed Female Dorm
+              </h3>
+              <p class="text-gray-600 text-sm mb-4" data-i18n="roomDesc1">
+                Spacious bunk beds with privacy curtains, individual lights, and
+                lockers.
+              </p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-brand-pink font-bold text-lg">$25 / Night</span>
+                <a
+                  href="#contact"
+                  class="text-brand-dark font-medium hover:text-brand-pink transition"
+                  data-i18n="bookBtn"
+                  >Book Now &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 2 -->
+          <div
+            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://thebacksidehouse.com/img/room-detail.webp"
+                alt="Cozy Bunk"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 rounded-md text-sm font-semibold"
+                data-i18n="roomLabel2"
+              >
+                Premium Bunk
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-brand-dark"
+                data-i18n="roomName2"
+              >
+                4-Bed Female Dorm
+              </h3>
+              <p class="text-gray-600 text-sm mb-4" data-i18n="roomDesc2">
+                More space and fewer people. Ideal for a quieter stay with all amenities.
+              </p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-brand-pink font-bold text-lg">$30 / Night</span>
+                <a
+                  href="#contact"
+                  class="text-brand-dark font-medium hover:text-brand-pink transition"
+                  data-i18n="bookBtn"
+                  >Book Now &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Room Card 3 -->
+          <div
+            class="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition duration-300"
+          >
+            <div class="relative h-64 overflow-hidden">
+              <img
+                src="https://thebacksidehouse.com/img/common-area.webp"
+                alt="Relax Area"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              />
+              <div
+                class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 rounded-md text-sm font-semibold"
+                data-i18n="roomLabel3"
+              >
+                Amenities
+              </div>
+            </div>
+            <div class="p-6">
+              <h3
+                class="text-xl font-bold mb-2 text-brand-dark"
+                data-i18n="roomName3"
+              >
+                Shared Facilities
+              </h3>
+              <p class="text-gray-600 text-sm mb-4" data-i18n="roomDesc3">
+                Fully equipped kitchen, clean bathrooms, and a cozy lounge area.
+              </p>
+              <div class="flex items-center justify-between mt-4">
+                <span class="text-brand-green font-bold text-sm" data-i18n="included">Included</span>
+                <a
+                  href="#contact"
+                  class="text-brand-dark font-medium hover:text-brand-pink transition"
+                  data-i18n="viewGallery"
+                  >View Gallery &rarr;</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS SECTION -->
+    <section class="py-20 bg-brand-pink/10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-display font-bold mb-12 text-center text-brand-dark"
+          data-i18n="reviewsTitle"
+        >
+          What Girls Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex text-yellow-400 mb-4">
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+            </div>
+            <p class="text-gray-600 mb-4 italic" data-i18n="review1">
+              "The best hostel I've ever stayed at! Feels like a home away from
+              home. So clean and the staff is amazing."
+            </p>
+            <p class="font-bold text-brand-dark">- Sarah, USA</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex text-yellow-400 mb-4">
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+            </div>
+            <p class="text-gray-600 mb-4 italic" data-i18n="review2">
+              "Perfect for solo travelers. I met so many great friends here. The
+              surf lessons were also top notch!"
+            </p>
+            <p class="font-bold text-brand-dark">- Elena, Germany</p>
+          </div>
+          <div class="bg-white p-8 rounded-2xl shadow-sm">
+            <div class="flex text-yellow-400 mb-4">
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+              <i data-lucide="star" class="fill-current w-5 h-5"></i>
+            </div>
+            <p class="text-gray-600 mb-4 italic" data-i18n="review3">
+              "Safe, beautiful, and in a great location. I extended my stay twice.
+              Can't wait to come back."
+            </p>
+            <p class="font-bold text-brand-dark">- Maria, Spain</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="py-20 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2
+          class="text-3xl md:text-4xl font-display font-bold mb-10 text-center text-brand-dark"
+          data-i18n="faqTitle"
+        >
+          Frequently Asked Questions
+        </h2>
+        <div class="space-y-4">
+          <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium list-none">
+              <span data-i18n="faqQ1">Is it really women only?</span>
+              <span class="transition group-open:rotate-180">
+                <i data-lucide="chevron-down"></i>
+              </span>
+            </summary>
+            <p class="text-gray-600 mt-4 text-sm leading-relaxed" data-i18n="faqA1">
+              Yes! The dorms and common areas are exclusively for women to ensure a
+              comfortable and safe environment.
+            </p>
+          </details>
+          <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium list-none">
+              <span data-i18n="faqQ2">Is there a kitchen?</span>
+              <span class="transition group-open:rotate-180">
+                <i data-lucide="chevron-down"></i>
+              </span>
+            </summary>
+            <p class="text-gray-600 mt-4 text-sm leading-relaxed" data-i18n="faqA2">
+              Absolutely. We have a fully equipped community kitchen where you can
+              cook your own meals.
+            </p>
+          </details>
+          <details class="group bg-gray-50 rounded-lg p-4 cursor-pointer">
+            <summary class="flex justify-between items-center font-medium list-none">
+              <span data-i18n="faqQ3">How far is the beach?</span>
+              <span class="transition group-open:rotate-180">
+                <i data-lucide="chevron-down"></i>
+              </span>
+            </summary>
+            <p class="text-gray-600 mt-4 text-sm leading-relaxed" data-i18n="faqA3">
+              We are located in a quiet area just a 10-15 minute walk from the main
+              beach and the center of Tamarindo.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-brand-dark text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div class="col-span-1 md:col-span-2">
+            <h3 class="text-2xl font-display font-bold mb-4">
+              The Backside House
+            </h3>
+            <p class="text-gray-400 mb-6 max-w-sm" data-i18n="footerDesc">
+              A community for women travelers in the heart of Tamarindo.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-lucide="instagram" class="w-6 h-6"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-lucide="facebook" class="w-6 h-6"></i>
+              </a>
+              <a href="#" class="text-gray-400 hover:text-white transition">
+                <i data-lucide="mail" class="w-6 h-6"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4" data-i18n="footerLinks">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li><a href="#about" class="hover:text-white">About Us</a></li>
+              <li><a href="#rooms" class="hover:text-white">Rooms</a></li>
+              <li><a href="#surflessons" class="hover:text-white">Surf Lessons</a></li>
+              <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4" data-i18n="footerContact">Contact Us</h4>
+            <ul class="space-y-2 text-gray-400 text-sm">
+              <li>Tamarindo, Costa Rica</li>
+              <li>+506 1234 5678</li>
+              <li>hola@thebacksidehouse.com</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-500 text-sm"
+        >
+          &copy; 2024 The Backside House. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+      // Initialize Lucide Icons
+      lucide.createIcons();
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+      });
+
+      function closeMenu() {
+        mobileMenu.classList.remove("open");
+      }
+
+      // --- LANGUAGE LOGIC ---
+      const translations = {
+        en: {
+          navAbout: "About",
+          navSurf: "Surf Lessons",
+          navRooms: "Rooms",
+          navBook: "Book Now",
+          heroTitle: "Women Only Hostel",
+          heroSubtitle: "Surf, yoga, and good vibes in Tamarindo, Costa Rica",
+          heroCta: "Book Your Stay",
+          aboutTitle: "More Than a Hostel",
+          aboutText1:
+            "We are the first women-only hostel in Tamarindo. A safe haven designed for travelers, digital nomads, and surf enthusiasts.",
+          aboutText2:
+            "Located just a short walk from the beach, we offer the perfect balance between relaxation and adventure. Join our community of empowered women exploring the world.",
+          featureSafe: "Safe Space",
+          featureWifi: "High-Speed Wifi",
+          featureSurf: "Surf Vibes",
+          surfTitle: "Surf School & Camp",
+          surfMainDesc: "Dive into the waves of Tamarindo with our exclusive surf programs. Whether you are a complete beginner or looking to refine your technique, our certified female-friendly instructors will guide you every step of the way. We offer private lessons, group sessions, and complete Surf & Stay packages.",
+          surfFeat1: "Certified Coaches",
+          surfFeat2: "Small Groups",
+          surfFeat3: "Video Analysis",
+          surfFeat4: "All Levels",
+          surfBtn: "View Packages & Details",
+          roomsTitle: "Our Accommodation",
+          roomsSubtitle:
+            "Comfortable, clean, and air-conditioned dorms designed for privacy and rest.",
+          roomLabel1: "Shared Dorm",
+          roomName1: "6-Bed Female Dorm",
+          roomDesc1:
+            "Spacious bunk beds with privacy curtains, individual lights, and lockers.",
+          roomLabel2: "Premium Bunk",
+          roomName2: "4-Bed Female Dorm",
+          roomDesc2:
+            "More space and fewer people. Ideal for a quieter stay with all amenities.",
+          roomLabel3: "Amenities",
+          roomName3: "Shared Facilities",
+          roomDesc3:
+            "Fully equipped kitchen, clean bathrooms, and a cozy lounge area.",
+          included: "Included",
+          viewGallery: "View Gallery →",
+          bookBtn: "Book Now →",
+          reviewsTitle: "What Girls Say",
+          review1:
+            '"The best hostel I\'ve ever stayed at! Feels like a home away from home. So clean and the staff is amazing."',
+          review2:
+            '"Perfect for solo travelers. I met so many great friends here. The surf lessons were also top notch!"',
+          review3:
+            '"Safe, beautiful, and in a great location. I extended my stay twice. Can\'t wait to come back."',
+          faqTitle: "Frequently Asked Questions",
+          faqQ1: "Is it really women only?",
+          faqA1:
+            "Yes! The dorms and common areas are exclusively for women to ensure a comfortable and safe environment.",
+          faqQ2: "Is there a kitchen?",
+          faqA2:
+            "Absolutely. We have a fully equipped community kitchen where you can cook your own meals.",
+          faqQ3: "How far is the beach?",
+          faqA3:
+            "We are located in a quiet area just a 10-15 minute walk from the main beach and the center of Tamarindo.",
+          footerDesc:
+            "A community for women travelers in the heart of Tamarindo.",
+          footerLinks: "Quick Links",
+          footerContact: "Contact Us",
+        },
+        es: {
+          navAbout: "Nosotras",
+          navSurf: "Clases de Surf",
+          navRooms: "Habitaciones",
+          navBook: "Reservar",
+          heroTitle: "Hostel Solo Mujeres",
+          heroSubtitle:
+            "Surf, yoga y buena energía en Tamarindo, Costa Rica",
+          heroCta: "Reserva Tu Estadía",
+          aboutTitle: "Más que un Hostel",
+          aboutText1:
+            "Somos el primer hostel solo para mujeres en Tamarindo. Un refugio seguro diseñado para viajeras, nómadas digitales y amantes del surf.",
+          aboutText2:
+            "Ubicadas a una corta caminata de la playa, ofrecemos el equilibrio perfecto entre relax y aventura. Únete a nuestra comunidad de mujeres empoderadas explorando el mundo.",
+          featureSafe: "Espacio Seguro",
+          featureWifi: "Wifi Rápido",
+          featureSurf: "Ambiente Surfer",
+          surfTitle: "Escuela de Surf",
+          surfMainDesc: "Sumérgete en las olas de Tamarindo con nuestros programas exclusivos de surf. Ya seas principiante o busques perfeccionar tu técnica, nuestros instructores certificados te guiarán en cada paso. Ofrecemos clases privadas, grupales y paquetes completos de Surf & Hospedaje.",
+          surfFeat1: "Instructores Certificados",
+          surfFeat2: "Grupos Pequeños",
+          surfFeat3: "Video Análisis",
+          surfFeat4: "Todos los Niveles",
+          surfBtn: "Ver Paquetes y Detalles",
+          roomsTitle: "Nuestro Alojamiento",
+          roomsSubtitle:
+            "Dormitorios cómodos, limpios y con aire acondicionado diseñados para la privacidad y el descanso.",
+          roomLabel1: "Dormitorio Compartido",
+          roomName1: "Dormitorio Femenino (6 Camas)",
+          roomDesc1:
+            "Literas espaciosas con cortinas de privacidad, luces individuales y casilleros.",
+          roomLabel2: "Litera Premium",
+          roomName2: "Dormitorio Femenino (4 Camas)",
+          roomDesc2:
+            "Más espacio y menos gente. Ideal para una estancia más tranquila con todas las comodidades.",
+          roomLabel3: "Amenidades",
+          roomName3: "Instalaciones Compartidas",
+          roomDesc3:
+            "Cocina totalmente equipada, baños limpios y una acogedora zona de estar.",
+          included: "Incluido",
+          viewGallery: "Ver Galería →",
+          bookBtn: "Reservar →",
+          reviewsTitle: "Lo Que Dicen Ellas",
+          review1:
+            '"¡El mejor hostel en el que me he alojado! Se siente como un hogar. Muy limpio y el personal es increíble."',
+          review2:
+            '"Perfecto para viajeras solas. Conocí a muchas amigas aquí. ¡Las clases de surf también fueron de primera!"',
+          review3:
+            '"Seguro, hermoso y en una excelente ubicación. Extendí mi estancia dos veces. No puedo esperar para volver."',
+          faqTitle: "Preguntas Frecuentes",
+          faqQ1: "¿Es realmente solo para mujeres?",
+          faqA1:
+            "¡Sí! Los dormitorios y las áreas comunes son exclusivamente para mujeres para garantizar un ambiente cómodo y seguro.",
+          faqQ2: "¿Hay cocina?",
+          faqA2:
+            "Absolutamente. Tenemos una cocina comunitaria totalmente equipada donde puedes preparar tus propias comidas.",
+          faqQ3: "¿Qué tan lejos está la playa?",
+          faqA3:
+            "Estamos ubicadas en una zona tranquila a solo 10-15 minutos a pie de la playa principal y del centro de Tamarindo.",
+          footerDesc:
+            "Una comunidad para mujeres viajeras en el corazón de Tamarindo.",
+          footerLinks: "Enlaces Rápidos",
+          footerContact: "Contáctanos",
+        },
+      };
+
+      let currentLang = localStorage.getItem("lang") || "en";
+
+      function updateContent() {
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          const key = element.getAttribute("data-i18n");
+          if (translations[currentLang][key]) {
+            element.innerText = translations[currentLang][key];
+          }
+          if (element.tagName === "INPUT" || element.tagName === "TEXTAREA") {
+            element.placeholder = translations[currentLang][key];
+          }
+          // Update aria-labels for accessibility if needed
+          if (element.hasAttribute("aria-label")) {
+            element.setAttribute("aria-label", translations[currentLang][key]);
+          }
+        });
+
+        // Update Flag Icon and Text
+        const flagUrl =
+          currentLang === "en"
+            ? "https://flagcdn.com/24x18/gb.png"
+            : "https://flagcdn.com/24x18/es.png";
+        
+        const langCode = currentLang === "en" ? "EN" : "ES";
+
+        // Desktop
+        const deskImg = document.getElementById("lang-display");
+        const deskText = document.getElementById("lang-display-text");
+        if(deskImg) {
+            deskImg.src = flagUrl;
+            deskImg.alt = currentLang === "en" ? "English" : "Español";
+        }
+        if(deskText) deskText.innerText = langCode;
+
+        // Mobile
+        const mobImg = document.getElementById("lang-display-mobile");
+        const mobText = document.getElementById("lang-display-mobile-text");
+        if(mobImg) {
+            mobImg.src = flagUrl;
+            mobImg.alt = currentLang === "en" ? "English" : "Español";
+        }
+        if(mobText) mobText.innerText = langCode;
+
+        localStorage.setItem("lang", currentLang);
+      }
+
+      function toggleLanguage() {
+        currentLang = currentLang === "en" ? "es" : "en";
+        updateContent();
+      }
+
+      // Initial load
+      updateContent();
+    </script>
+  </body>
+</html>

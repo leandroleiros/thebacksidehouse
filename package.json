@@ -1,0 +1,29 @@
+{
+  "name": "thebacksidehouse",
+  "version": "1.0.0",
+  "description": "The Backside House - Women Only Hostel & Surf in Tamarindo",
+  "scripts": {
+    "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
+    "lint:css": "stylelint css/custom.css css/input.css",
+    "lint:html": "htmlhint index.html surfclass.html marca.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/cli": "^4.1.18",
+    "eslint": "^10.0.0",
+    "globals": "^17.3.0",
+    "htmlhint": "^1.8.1",
+    "sharp-cli": "^5.2.0",
+    "stylelint": "^17.1.1",
+    "stylelint-config-standard": "^40.0.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5"
+  }
+}

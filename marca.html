@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Board | The Backside House</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            sand: '#FDFBF7',
+                            coral: '#E8A6A0',
+                            teal: '#4A7C85',
+                            dark: '#2D3748',
+                            gold: '#F6E05E',
+                            whatsapp: '#25D366'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .color-swatch {
+            transition: transform 0.2s;
+        }
+        .color-swatch:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 py-10 px-4 min-h-screen font-sans">
+
+    <div class="max-w-5xl mx-auto bg-white p-12 rounded-3xl shadow-2xl">
+        
+        <!-- Header -->
+        <div class="text-center mb-16 border-b border-gray-100 pb-10">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-brand-dark mb-2">The Backside House</h1>
+            <p class="text-brand-teal uppercase tracking-widest font-semibold text-sm">Guía de Estilo Oficial & Paleta de Colores</p>
+        </div>
+
+        <!-- Colores Principales -->
+        <div class="mb-16">
+            <h2 class="font-serif text-2xl text-brand-dark mb-8 flex items-center">
+                <span class="w-8 h-1 bg-brand-coral mr-4 rounded-full"></span>
+                Colores Primarios
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- TEAL -->
+                <div class="color-swatch">
+                    <div class="h-48 rounded-2xl bg-brand-teal shadow-lg flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-xl">Principal</span>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">TBH Teal</h3>
+                        <p class="text-gray-500 text-sm mb-2">Identidad, Botones, Títulos</p>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 font-mono text-sm text-gray-600">
+                            <div class="flex justify-between"><span>HEX:</span> <strong>#4A7C85</strong></div>
+                            <div class="flex justify-between mt-1"><span>RGB:</span> <span>74, 124, 133</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CORAL -->
+                <div class="color-swatch">
+                    <div class="h-48 rounded-2xl bg-brand-coral shadow-lg flex items-center justify-center mb-4">
+                        <span class="text-white font-bold text-xl">Acento</span>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">TBH Coral</h3>
+                        <p class="text-gray-500 text-sm mb-2">Detalles, Call to Action, Energía</p>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 font-mono text-sm text-gray-600">
+                            <div class="flex justify-between"><span>HEX:</span> <strong>#E8A6A0</strong></div>
+                            <div class="flex justify-between mt-1"><span>RGB:</span> <span>232, 166, 160</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SAND -->
+                <div class="color-swatch">
+                    <div class="h-48 rounded-2xl bg-brand-sand shadow-lg border border-gray-200 flex items-center justify-center mb-4">
+                        <span class="text-brand-dark font-bold text-xl">Fondo</span>
+                    </div>
+                    <div class="px-2">
+                        <h3 class="font-bold text-lg text-gray-800">TBH Sand</h3>
+                        <p class="text-gray-500 text-sm mb-2">Fondos web, Papelería</p>
+                        <div class="bg-gray-50 p-3 rounded-lg border border-gray-200 font-mono text-sm text-gray-600">
+                            <div class="flex justify-between"><span>HEX:</span> <strong>#FDFBF7</strong></div>
+                            <div class="flex justify-between mt-1"><span>RGB:</span> <span>253, 251, 247</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Colores Secundarios -->
+        <div class="mb-16">
+            <h2 class="font-serif text-2xl text-brand-dark mb-8 flex items-center">
+                <span class="w-8 h-1 bg-brand-teal mr-4 rounded-full"></span>
+                Colores Secundarios & Texto
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- DARK -->
+                <div>
+                    <div class="h-24 rounded-xl bg-brand-dark shadow-md mb-3"></div>
+                    <h4 class="font-bold text-gray-800">Dark Text</h4>
+                    <p class="font-mono text-xs text-gray-500">#2D3748</p>
+                    <p class="text-xs text-gray-400 mt-1">Para párrafos y lectura.</p>
+                </div>
+
+                <!-- GOLD -->
+                <div>
+                    <div class="h-24 rounded-xl bg-brand-gold shadow-md mb-3"></div>
+                    <h4 class="font-bold text-gray-800">Vibe Gold</h4>
+                    <p class="font-mono text-xs text-gray-500">#F6E05E</p>
+                    <p class="text-xs text-gray-400 mt-1">Estrellas y destacados.</p>
+                </div>
+                
+                 <!-- WHITE -->
+                 <div>
+                    <div class="h-24 rounded-xl bg-white border border-gray-200 shadow-sm mb-3"></div>
+                    <h4 class="font-bold text-gray-800">Pure White</h4>
+                    <p class="font-mono text-xs text-gray-500">#FFFFFF</p>
+                    <p class="text-xs text-gray-400 mt-1">Tarjetas sobre fondo Arena.</p>
+                </div>
+
+                <!-- WHATSAPP -->
+                <div>
+                    <div class="h-24 rounded-xl bg-brand-whatsapp shadow-md mb-3"></div>
+                    <h4 class="font-bold text-gray-800">WhatsApp</h4>
+                    <p class="font-mono text-xs text-gray-500">#25D366</p>
+                    <p class="text-xs text-gray-400 mt-1">Solo para contacto.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tipografía -->
+        <div class="mb-16">
+            <h2 class="font-serif text-2xl text-brand-dark mb-8 flex items-center">
+                <span class="w-8 h-1 bg-brand-gold mr-4 rounded-full"></span>
+                Tipografía
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="bg-brand-sand p-8 rounded-2xl border border-gray-100">
+                    <span class="text-xs font-bold text-brand-teal uppercase tracking-wider mb-2 block">Títulos / Elegancia</span>
+                    <h3 class="font-serif text-4xl text-brand-dark mb-2">Playfair Display</h3>
+                    <p class="font-serif text-brand-dark opacity-80 text-xl italic">"Tu refugio seguro en el paraíso"</p>
+                    <div class="mt-4 text-sm text-gray-500 font-mono">Pesos: 400 (Regular), 600 (SemiBold), 700 (Bold)</div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border border-gray-200">
+                    <span class="text-xs font-bold text-brand-coral uppercase tracking-wider mb-2 block">Cuerpo / Modernidad</span>
+                    <h3 class="font-sans text-4xl text-brand-dark mb-2">Poppins</h3>
+                    <p class="font-sans text-gray-600">Un espacio exclusivo para mujeres donde la seguridad, la comunidad y la buena vibra se encuentran.</p>
+                    <div class="mt-4 text-sm text-gray-500 font-mono">Pesos: 300 (Light), 400 (Regular), 600 (SemiBold)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ejemplos de Uso -->
+        <div>
+            <h2 class="font-serif text-2xl text-brand-dark mb-8 flex items-center">
+                <span class="w-8 h-1 bg-gray-300 mr-4 rounded-full"></span>
+                Ejemplos de Aplicación
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Botón Principal -->
+                <div class="flex flex-col items-center justify-center p-8 border border-gray-100 rounded-xl bg-white">
+                    <p class="text-sm text-gray-400 mb-4">Botón Principal (CTA)</p>
+                    <button class="bg-brand-teal text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-opacity-90">
+                        Reservar Ahora
+                    </button>
+                </div>
+
+                <!-- Botón Secundario -->
+                <div class="flex flex-col items-center justify-center p-8 border border-gray-100 rounded-xl bg-brand-sand">
+                    <p class="text-sm text-gray-400 mb-4">Acento / Destacado</p>
+                    <button class="bg-brand-coral text-white px-8 py-3 rounded-full font-bold shadow-md hover:bg-opacity-90">
+                        Ver Disponibilidad
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 text-center text-gray-400 text-sm border-t border-gray-100 pt-8">
+            Generado para The Backside House • 2026
+        </div>
+
+    </div>
+
+</body>
+</html>

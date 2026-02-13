@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <title>The Backside House | Surf & Stay Tamarindo</title>
+    <meta
+      name="description"
+      content="Surf, accommodation and good vibes in Tamarindo, Costa Rica. Private and group surf lessons."
+    />
+
+    <!-- OPEN GRAPH (Redes Sociales) -->
+    <meta property="og:title" content="The Backside House | Surf & Stay Tamarindo" />
+    <meta property="og:description" content="Surf, accommodation and good vibes in Tamarindo, Costa Rica. Private and group surf lessons." />
+    <meta property="og:image" content="https://thebacksidehouse.com/img/surflessons-desktop.webp" />
+    <meta property="og:url" content="https://thebacksidehouse.com/surfclass.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- CANONICAL & HREFLANG -->
+    <link rel="canonical" href="https://thebacksidehouse.com/surfclass.html" />
+    <link rel="alternate" hreflang="en" href="https://thebacksidehouse.com/surfclass.html" />
+    <link rel="alternate" hreflang="es" href="https://thebacksidehouse.com/surfclass.html" />
+    <link rel="alternate" hreflang="x-default" href="https://thebacksidehouse.com/surfclass.html" />
+
+    <!-- CONTENT SECURITY POLICY -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+        default-src 'self';
+        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
+        img-src 'self' data: https:;
+        font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
+        connect-src 'self' https://www.google-analytics.com;
+        frame-src https://www.google.com;
+      "
+    />
+
+    <!-- SCHEMA.ORG JSON-LD (Surf classes / Service) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Surf Classes - The Backside House",
+        "description": "Private and group surf lessons in Tamarindo, Costa Rica. Women-only Surf Lessons, certified instructors, gear included.",
+        "url": "https://thebacksidehouse.com/surfclass.html",
+        "provider": {
+          "@type": "Hostel",
+          "name": "The Backside House",
+          "url": "https://thebacksidehouse.com"
+        },
+        "areaServed": {
+          "@type": "Place",
+          "name": "Tamarindo",
+          "address": { "@type": "PostalAddress", "addressLocality": "Tamarindo", "addressCountry": "CR" }
+        }
+      }
+    </script>
+
+    <!-- PRECONEXIONES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <link rel="icon" href="favicon.ico" />
+
+    <!-- Fuentes primero para que estén disponibles al pintar (Poppins + Playfair) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    />
+
+    <!-- PRELOAD HERO IMAGE (LCP) -->
+    <link rel="preload" as="image" href="img/heroimg.webp" />
+
+    <!-- PREFETCH CTA (WhatsApp surf) -->
+    <link rel="prefetch" href="https://wa.me/50663638563" />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-CF5WG8LDFJ"
+    ></script>
+    <script src="js/gtag-init.js"></script>
+
+    <!-- Tailwind v4 compilado (mismo build que index.html) -->
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- custom.css (componentes propios) -->
+    <link rel="stylesheet" href="css/custom.css" />
+
+    <script src="https://unpkg.com/lucide@0.563.0"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* Variables para .hero-bg (definido en custom.css); se aplican en body para que tengan prioridad */
+      /* Rutas relativas al CSS (custom.css está en css/), no al HTML */
+      body {
+        --hero-image: url("../img/heroimg.webp");
+        --hero-image-desktop: url("../img/heroimg.webp");
+        --hero-gradient-start: rgba(45, 55, 72, 0.25);
+        --hero-gradient-end: rgba(45, 55, 72, 0.35);
+        font-family: "Poppins", sans-serif;
+      }
+      /* Fuentes definidas en custom.css; refuerzo aquí por si el orden de cascada cambia */
+      .font-sans { font-family: "Poppins", sans-serif; }
+      .font-serif { font-family: "Playfair Display", serif; }
+
+      .wave-pattern {
+        background-color: #fdfbf7;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264 1.088-.402l1.768-.661C33.64 15.347 39.647 14 50 14c10.271 0 15.362 1.222 24.629 4.928.955.383 1.869.74 2.75 1.072h6.225c-2.51-.73-5.139-1.691-8.233-2.928C65.888 12.327 63.71 11 50 11c-13.623 0-23.832 3.063-30.676 6.191l-1.928.846a89.927 89.927 0 0 0-4.048 1.963h7.836zm.54-6.002c-3.153-.878-6.678-2.074-11.272-4.09l-1.94-.848C3.89 6.273 1.258 5.6 0 5.6V.6c3.273 0 7.828 1.954 13.927 4.67l2.25.992c7.808 3.42 16.712 5.738 29.823 5.738 13.025 0 21.84-2.28 29.563-5.67l2.617-1.14C85.074 2.22 89.508 0 95.83 0h4.17v5.6c-1.396 0-4.305.803-8.834 2.72l-2.484 1.052C80.375 12.92 72.844 16 50 16c-14.936 0-22.365-2.73-28.276-6.002z' fill='%234A7C85' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      }
+
+      /* Asegurar que los botones táctiles no tengan delay */
+      button,
+      a {
+        touch-action: manipulation;
+      }
+
+      /* Focus visible para teclado y accesibilidad (sugerencia 4) */
+      a:focus-visible,
+      button:focus-visible {
+        outline: none;
+        box-shadow:
+          0 0 0 2px #fdfbf7,
+          0 0 0 4px #4a7c85;
+      }
+
+      /* @keyframes fadeInUp, bounce-slow, .animate-bounce-slow y .wa-float-btn:hover
+         ya están definidos en custom.css; no se duplican aquí */
+    </style>
+  </head>
+  <body
+    class="bg-brand-sand text-brand-dark font-sans selection:bg-brand-coral selection:text-white antialiased"
+  >
+    <!-- Navigation (mismo estilo que index.html) -->
+    <nav
+      id="navbar"
+      class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm"
+      role="navigation"
+      aria-label="Main navigation"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20 md:h-24">
+          <!-- LOGO -->
+          <a
+            href="index.html"
+            class="flex-shrink-0 flex items-center gap-3 text-inherit no-underline hover:opacity-90 transition-opacity"
+          >
+            <img
+              src="img/tbh_logo.webp"
+              alt="The Backside House Logo"
+              width="150"
+              height="50"
+              class="h-10 md:h-12 w-auto logo-img rounded-md hover:opacity-90 transition-opacity js-logo-fallback"
+            />
+            <span class="flex flex-col">
+              <span
+                class="font-serif text-lg md:text-xl lg:text-2xl font-bold text-brand-teal tracking-tighter leading-tight"
+                >The Backside House</span
+              >
+              <span
+                class="text-brand-coral font-sans text-sm md:text-base lg:text-lg font-normal"
+                >Tamarindo, Costa Rica</span
+              >
+            </span>
+          </a>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex space-x-6 items-center">
+            <a
+              href="index.html"
+              class="text-gray-600 hover:text-brand-coral transition-colors font-medium"
+              data-i18n="nav_home"
+              >Home</a
+            >
+            <a
+              href="#vibra"
+              class="text-gray-600 hover:text-brand-coral transition-colors font-medium"
+              data-i18n="nav_vibra"
+              >Our Vibe</a
+            >
+            <a
+              href="#clases"
+              class="text-gray-600 hover:text-brand-coral transition-colors font-medium"
+              data-i18n="nav_classes"
+              >Classes</a
+            >
+            <button
+              type="button"
+              data-action="toggle-language"
+              class="lang-switcher flex items-center justify-center gap-2 text-gray-600 font-medium rounded-full px-5 py-2 min-h-[44px] bg-white/80 border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-teal/40 hover:text-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30 transition-all duration-200 cursor-pointer"
+              aria-label="Change language"
+            >
+              <img
+                id="lang-display"
+                src="https://flagcdn.com/24x18/gb.png"
+                alt="English"
+                width="24"
+                height="18"
+                class="rounded-sm object-contain shrink-0 shadow-[0_0_0_1px_rgba(0,0,0,0.06)]"
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <span
+                id="lang-display-text"
+                class="text-sm font-semibold tracking-wide"
+                >EN</span
+              >
+            </button>
+            <a
+              href="#booking"
+              class="bg-brand-teal text-white px-5 py-2.5 md:px-6 md:py-2.5 rounded-full hover:bg-opacity-90 transition-all shadow-md transform hover:-translate-y-0.5 font-semibold min-h-[44px] flex items-center justify-center text-sm md:text-base"
+              data-i18n="nav_book"
+              >Book</a
+            >
+          </div>
+
+          <div class="md:hidden flex items-center gap-3 md:gap-4">
+            <button
+              type="button"
+              data-action="toggle-language"
+              class="lang-switcher flex items-center justify-center gap-2 text-gray-600 font-semibold rounded-full px-5 py-2 min-h-[44px] bg-white/80 border border-gray-200 shadow-sm hover:shadow-md hover:border-brand-teal/40 hover:text-brand-teal focus:outline-none focus:ring-2 focus:ring-brand-teal/30 transition-all duration-200 cursor-pointer"
+              aria-label="Change Language Mobile"
+            >
+              <img
+                id="lang-display-mobile"
+                src="https://flagcdn.com/24x18/gb.png"
+                alt="English"
+                width="24"
+                height="18"
+                class="rounded-sm object-contain shrink-0 shadow-[0_0_0_1px_rgba(0,0,0,0.06)]"
+                aria-hidden="true"
+                loading="lazy"
+              />
+              <span id="lang-display-mobile-text" class="text-sm tracking-wide"
+                >EN</span
+              >
+            </button>
+            <button
+              type="button"
+              id="mobile-menu-btn"
+              data-action="toggle-menu"
+              class="text-brand-teal hover:text-brand-coral focus:outline-none p-3 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label="Open Menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+            >
+              <i class="fas fa-bars text-xl md:text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg"
+        role="navigation"
+        aria-label="Mobile navigation"
+      >
+        <div class="px-4 pt-2 pb-6 space-y-2 text-center">
+          <a
+            href="index.html"
+            data-action="toggle-menu"
+            class="block px-4 py-4 text-gray-700 hover:text-brand-coral hover:bg-gray-50 rounded-md text-base md:text-lg min-h-[44px] flex items-center justify-center"
+            data-i18n="nav_home"
+            >Home</a
+          >
+          <a
+            href="#vibra"
+            data-action="toggle-menu"
+            class="block px-4 py-4 text-gray-700 hover:text-brand-coral hover:bg-gray-50 rounded-md text-base md:text-lg min-h-[44px] flex items-center justify-center"
+            data-i18n="nav_vibra"
+            >Our Vibe</a
+          >
+          <a
+            href="#clases"
+            data-action="toggle-menu"
+            class="block px-4 py-4 text-gray-700 hover:text-brand-coral hover:bg-gray-50 rounded-md text-base md:text-lg min-h-[44px] flex items-center justify-center"
+            data-i18n="nav_classes"
+            >Classes</a
+          >
+          <a
+            href="#booking"
+            data-action="toggle-menu"
+            class="block mt-4 w-full bg-brand-teal text-white px-5 py-4 rounded-lg font-bold shadow-md min-h-[44px] flex items-center justify-center text-base md:text-lg"
+            data-i18n="nav_book_mobile"
+            >WhatsApp / Book</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header
+      class="relative min-h-screen flex items-center justify-center hero-bg text-brand-sand"
+    >
+      <!-- AUMENTÉ LA OPACIDAD DEL OVERLAY A 50% PARA MEJORAR EL CONTRASTE DEL TEXTO -->
+      <div class="absolute inset-0 bg-brand-dark/50"></div>
+      <div
+        class="relative z-10 text-center px-4 max-w-4xl mx-auto pt-16 md:pt-20"
+      >
+        <!-- Tagline: color según marca.html (Teal = Principal #4A7C85) -->
+        <span
+          class="inline-block py-1 px-3 rounded-full bg-brand-teal text-white text-sm font-semibold tracking-wider mb-6 uppercase animate-fade-in-up"
+          data-i18n="hero_tagline"
+          >Pura Vida & Pure Waves</span
+        >
+
+        <h1
+          class="font-serif text-4xl sm:text-5xl md:text-8xl font-medium mb-6 leading-tight text-white drop-shadow-xl"
+        >
+          Catching<br /><i class="font-serif italic text-brand-coral">Waves</i>
+          & Vibes
+        </h1>
+
+        <p
+          class="text-base md:text-xl text-brand-sand/95 mb-8 md:mb-12 max-w-lg md:max-w-2xl mx-auto font-light leading-relaxed px-2 drop-shadow-md"
+          data-i18n="hero_subtitle"
+        >
+          Come for the waves, stay for the vibe. Relaxed surf, great coffee, and
+          everything ready so you just enjoy Tamarindo.
+        </p>
+
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full px-4 sm:px-0"
+        >
+          <a
+            href="#clases"
+            class="w-full sm:w-auto px-8 py-4 bg-brand-sand text-brand-dark font-semibold rounded-full hover:bg-white transition duration-300 shadow-xl active:scale-95"
+            data-i18n="hero_cta_classes"
+            >View Classes</a
+          >
+          <a
+            href="https://wa.me/50663638563"
+            target="_blank"
+            class="w-full sm:w-auto px-8 py-4 bg-brand-teal text-white font-semibold rounded-full hover:bg-brand-dark transition duration-300 shadow-xl shadow-brand-teal/30 active:scale-95"
+            data-i18n="hero_cta_wa"
+            >Chat now</a
+          >
+        </div>
+      </div>
+
+      <div
+        class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-80"
+      >
+        <i data-lucide="arrow-down" class="h-6 w-6 text-brand-sand"></i>
+      </div>
+    </header>
+
+    <!-- Our Vibe Section -->
+    <!-- Reduced padding for mobile (py-16) vs desktop (md:py-24) -->
+    <section id="vibra" class="py-16 md:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
+          <!-- Orden visual: Imagen primero en móvil para impacto -->
+          <div class="relative group mb-8 lg:mb-0">
+            <div
+              class="absolute -top-3 -left-3 lg:-top-4 lg:-left-4 w-full h-full border-2 border-brand-teal/20 rounded-2xl z-0 transform translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-4"
+            ></div>
+            <img
+              src="https://images.unsplash.com/photo-1537519646099-335112f03225?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+              loading="lazy"
+              alt="Surf Vibes"
+              class="relative z-10 rounded-2xl shadow-xl object-cover h-[350px] lg:h-[500px] w-full"
+            />
+            <!-- Badge posicionado para no tapar en móvil -->
+            <div
+              class="absolute -bottom-4 -right-2 lg:-bottom-6 lg:-right-6 bg-brand-dark text-brand-sand p-4 lg:p-8 rounded-xl shadow-xl z-20 border-b-4 border-brand-coral"
+            >
+              <p
+                class="font-serif font-bold text-2xl lg:text-4xl text-brand-coral"
+              >
+                100%
+              </p>
+              <p class="text-xs lg:text-sm opacity-90 tracking-wide uppercase">
+                Pura Vida
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center mb-3 md:mb-4">
+              <span
+                class="w-8 md:w-12 h-[1px] bg-brand-dark mr-3 md:mr-4"
+              ></span>
+              <h2
+                class="text-brand-teal font-medium tracking-widest text-xs md:text-sm uppercase"
+                data-i18n="vibe_label"
+              >
+                Our Vibe
+              </h2>
+            </div>
+            <h3
+              class="font-serif text-3xl md:text-5xl font-medium text-brand-dark mb-6 md:mb-8 leading-tight"
+              data-i18n="vibe_title"
+            >
+              We don't just sell surf,<br />
+              we create <span class="text-brand-coral italic">memories</span>.
+            </h3>
+            <p
+              class="text-brand-dark/70 mb-4 md:mb-6 leading-relaxed font-light text-sm md:text-base"
+              data-i18n="vibe_p1"
+            >
+              Our idea is simple: you learn to surf while having an amazing
+              time. The lesson lasts 2 hours, but the good times continue back
+              at the club.
+            </p>
+            <p
+              class="text-brand-dark/70 mb-8 md:mb-10 leading-relaxed font-light text-sm md:text-base"
+              data-i18n="vibe_p2"
+            >
+              We provide all the gear and sunscreen. We have lockers for your
+              stuff, and when you get out of the water, a great coffee or fresh
+              water is waiting to recharge.
+            </p>
+            <ul class="space-y-4">
+              <li
+                class="flex items-center text-brand-dark/80 text-sm md:text-base"
+              >
+                <span
+                  class="bg-brand-teal/10 p-2 rounded-full mr-3 md:mr-4 text-brand-teal flex-shrink-0"
+                  ><i data-lucide="shield-check" class="h-4 w-4"></i></span
+                ><span data-i18n="vibe_li1"
+                  >Certified instructors (max 4:1)</span
+                >
+              </li>
+              <li
+                class="flex items-center text-brand-dark/80 text-sm md:text-base"
+              >
+                <span
+                  class="bg-brand-teal/10 p-2 rounded-full mr-3 md:mr-4 text-brand-teal flex-shrink-0"
+                  ><i data-lucide="coffee" class="h-4 w-4"></i></span
+                ><span data-i18n="vibe_li2"
+                  >Lockers, coffee & water included</span
+                >
+              </li>
+              <li
+                class="flex items-center text-brand-dark/80 text-sm md:text-base"
+              >
+                <span
+                  class="bg-brand-teal/10 p-2 rounded-full mr-3 md:mr-4 text-brand-teal flex-shrink-0"
+                  ><i data-lucide="sun" class="h-4 w-4"></i></span
+                ><span data-i18n="vibe_li3">Full gear + sunscreen</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Surf Sessions Section -->
+    <section id="clases" class="py-16 md:py-24 wave-pattern relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 md:mb-20">
+          <span
+            class="text-brand-coral font-serif italic text-lg md:text-xl mb-2 block"
+            >Level Up</span
+          >
+          <h2
+            class="font-serif text-3xl md:text-5xl font-medium text-brand-dark mb-4 md:mb-6"
+            data-i18n="sessions_title"
+          >
+            Surf Sessions
+          </h2>
+          <div
+            class="w-16 md:w-24 h-1 bg-brand-teal mx-auto rounded-full mb-4 md:mb-6"
+          ></div>
+          <p
+            class="text-brand-dark/60 max-w-2xl mx-auto font-light text-sm md:text-base"
+            data-i18n="sessions_p"
+          >
+            Come alone or with friends. We adapt to your level so the experience
+            is smooth and fun.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto"
+        >
+          <!-- Group Card (MOVED TO FIRST POSITION) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-brand-sand flex flex-col"
+          >
+            <div class="relative h-56 md:h-64 overflow-hidden">
+              <img
+                src="img/group4.webp"
+                loading="lazy"
+                alt="Group Surf"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 right-4 bg-brand-coral text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md"
+                data-i18n="card_group_badge"
+              >
+                Group
+              </div>
+            </div>
+            <div class="p-6 md:p-8 flex-1 flex flex-col">
+              <h3
+                class="font-serif text-xl md:text-2xl text-brand-dark mb-2"
+                data-i18n="card_group_title"
+              >
+                Group Session
+              </h3>
+              <p
+                class="text-brand-dark/50 text-xs md:text-sm mb-6"
+                data-i18n="card_group_p"
+              >
+                Come with your group (max 4 people per instructor).
+              </p>
+              <div
+                class="space-y-2 mb-8 bg-brand-sand/50 p-4 rounded-lg flex-1"
+              >
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-brand-dark/70" data-i18n="card_group_2p"
+                    >2 People</span
+                  ><span class="text-brand-teal font-bold"
+                    >$130 ($65
+                    <span data-i18n="card_group_each">each</span>)</span
+                  >
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-brand-dark/70" data-i18n="card_group_3p"
+                    >3 People</span
+                  ><span class="text-brand-teal font-bold"
+                    >$180 ($60
+                    <span data-i18n="card_group_each">each</span>)</span
+                  >
+                </div>
+                <div class="flex justify-between items-center text-sm">
+                  <span class="text-brand-dark/70" data-i18n="card_group_4p"
+                    >4 People</span
+                  ><span class="text-brand-teal font-bold"
+                    >$220 ($55
+                    <span data-i18n="card_group_each">each</span>)</span
+                  >
+                </div>
+              </div>
+              <div class="mt-auto border-t border-gray-100 pt-6">
+                <div class="flex items-end justify-between mb-4">
+                  <span
+                    class="text-sm text-brand-dark/50"
+                    data-i18n="card_group_from"
+                    >From</span
+                  >
+                  <span class="font-serif text-3xl md:text-4xl text-brand-teal"
+                    >$55<span
+                      class="text-base md:text-lg font-sans font-normal opacity-40"
+                      >/pp</span
+                    ></span
+                  >
+                </div>
+                <a
+                  href="#booking"
+                  class="block w-full text-center py-3.5 bg-brand-teal text-white font-medium hover:bg-brand-dark rounded-xl transition uppercase text-sm shadow-lg active:scale-95 touch-manipulation"
+                  data-i18n="card_group_btn"
+                  >I'm interested</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Private Card (MOVED TO SECOND POSITION) -->
+          <div
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-brand-sand flex flex-col"
+          >
+            <div class="relative h-56 md:h-64 overflow-hidden">
+              <img
+                src="img/privatesurf.webp"
+                loading="lazy"
+                alt="Private Surf"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-4 right-4 bg-brand-teal text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md"
+              >
+                Premium
+              </div>
+            </div>
+            <div class="p-6 md:p-8 flex-1 flex flex-col">
+              <h3
+                class="font-serif text-xl md:text-2xl text-brand-dark mb-2"
+                data-i18n="card_private_title"
+              >
+                Private Session
+              </h3>
+              <p
+                class="text-brand-dark/50 text-xs md:text-sm mb-6"
+                data-i18n="card_private_p"
+              >
+                Exclusive attention. Ideal to progress fast.
+              </p>
+              <div class="space-y-3 mb-8 flex-1 text-left">
+                <div class="flex items-center text-sm text-brand-dark/70">
+                  <i
+                    data-lucide="clock"
+                    class="w-4 h-4 mr-3 text-brand-coral flex-shrink-0"
+                  ></i>
+                  <span data-i18n="card_private_2h">2 hours of pure vibes</span>
+                </div>
+                <div class="flex items-center text-sm text-brand-dark/70">
+                  <i
+                    data-lucide="user"
+                    class="w-4 h-4 mr-3 text-brand-coral flex-shrink-0"
+                  ></i>
+                  <span data-i18n="card_private_1"
+                    >Just you and the instructor</span
+                  >
+                </div>
+                <div class="flex items-center text-sm text-brand-dark/70">
+                  <i
+                    data-lucide="package-check"
+                    class="w-4 h-4 mr-3 text-brand-coral flex-shrink-0"
+                  ></i>
+                  <span data-i18n="card_private_all">All inclusive</span>
+                </div>
+              </div>
+              <div class="mt-auto border-t border-gray-100 pt-6 text-center">
+                <div class="flex items-end justify-between mb-4">
+                  <span
+                    class="text-sm text-brand-dark/50"
+                    data-i18n="card_private_inv"
+                    >Investment</span
+                  >
+                  <span class="font-serif text-3xl md:text-4xl text-brand-teal"
+                    >$85</span
+                  >
+                </div>
+                <a
+                  href="#booking"
+                  class="block w-full text-center py-3.5 border-2 border-brand-teal text-brand-teal font-medium hover:bg-brand-teal hover:text-white rounded-xl transition uppercase text-sm touch-manipulation"
+                  data-i18n="card_private_btn"
+                  >I'm interested</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking / Contact Section -->
+    <section
+      id="booking"
+      class="py-16 md:py-24 bg-brand-dark text-brand-sand relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 right-0 w-96 h-96 bg-brand-teal rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4"
+      ></div>
+      <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+        <h2 class="font-serif text-4xl md:text-5xl mb-4 md:mb-6 text-white">
+          Let's <span class="text-brand-coral italic">Surf</span>
+        </h2>
+        <p
+          class="text-brand-sand/60 mb-8 md:mb-12 font-light max-w-2xl mx-auto text-sm md:text-base"
+          data-i18n="booking_p"
+        >
+          Ready to get in the water? Message us and we'll get your spot sorted
+          in no time.
+        </p>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto"
+        >
+          <div
+            class="bg-white/5 p-6 md:p-8 rounded-xl border border-white/10 text-left"
+          >
+            <h4
+              class="text-brand-coral font-bold text-xs md:text-sm uppercase tracking-widest mb-4"
+              data-i18n="booking_payments"
+            >
+              Payment & Booking
+            </h4>
+            <ul class="space-y-4 text-sm text-brand-sand/70 font-light">
+              <li class="flex items-start">
+                <i
+                  data-lucide="check"
+                  class="w-5 h-5 mr-3 text-brand-teal flex-shrink-0"
+                ></i>
+                <span data-i18n="booking_cash">Cash preferred.</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  data-lucide="info"
+                  class="w-5 h-5 mr-3 text-brand-teal flex-shrink-0"
+                ></i>
+                <span data-i18n="booking_card">13% surcharge with card.</span>
+              </li>
+              <li class="flex items-start">
+                <i
+                  data-lucide="calendar"
+                  class="w-5 h-5 mr-3 text-brand-teal flex-shrink-0"
+                ></i>
+                <span data-i18n="booking_deposit"
+                  >We ask for a deposit to confirm.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="flex flex-col justify-center space-y-4">
+            <a
+              href="https://wa.me/50663638563"
+              target="_blank"
+              class="flex items-center group bg-white/5 p-6 rounded-xl hover:bg-brand-teal/20 transition active:scale-95"
+            >
+              <div
+                class="flex-shrink-0 bg-[#25D366] p-3 rounded-lg shadow-lg flex items-center justify-center w-12 h-12"
+              >
+                <svg
+                  class="w-6 h-6 text-white flex-shrink-0"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                  />
+                </svg>
+              </div>
+              <div class="ml-6 text-left">
+                <p class="font-serif text-lg text-white">WhatsApp</p>
+                <p
+                  class="text-brand-sand/50 text-sm"
+                  data-i18n="booking_wa_sub"
+                >
+                  Immediate response
+                </p>
+              </div>
+            </a>
+            <div
+              class="flex items-center group bg-white/5 p-6 rounded-xl border border-white/10"
+            >
+              <div
+                class="flex-shrink-0 bg-brand-teal p-3 rounded-lg shadow-lg flex items-center justify-center w-12 h-12"
+              >
+                <i
+                  data-lucide="map-pin"
+                  class="h-6 w-6 text-white flex-shrink-0"
+                ></i>
+              </div>
+              <div class="ml-6 text-left">
+                <p
+                  class="font-serif text-lg text-white"
+                  data-i18n="booking_location"
+                >
+                  Location
+                </p>
+                <p class="text-brand-sand/50 text-sm">Tamarindo, Costa Rica</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="bg-brand-dark border-t border-brand-sand/10 text-brand-sand/60 py-12 pb-24 md:pb-12"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-8"
+      >
+        <div
+          class="flex flex-col text-center md:text-left items-center md:items-start"
+        >
+          <span class="font-serif font-bold text-2xl text-brand-sand"
+            >The Backside House</span
+          >
+          <span
+            class="font-sans text-[0.6rem] tracking-[0.2em] text-brand-teal uppercase"
+            >Tamarindo • Costa Rica</span
+          >
+        </div>
+        <div class="text-center md:text-left">
+          <h4
+            class="font-bold text-lg mb-4 text-brand-coral"
+            data-i18n="footer_contact"
+          >
+            Contact
+          </h4>
+          <ul class="space-y-2 text-sm font-light">
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <i data-lucide="phone" class="h-4 w-4 flex-shrink-0"></i>
+              <a
+                href="https://wa.me/50663638563"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-brand-coral transition-colors"
+                >+506 6363 8563</a
+              >
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <i data-lucide="mail" class="h-4 w-4 flex-shrink-0"></i>
+              <a
+                href="mailto:thebacksidehouse@gmail.com"
+                class="hover:text-brand-coral transition-colors"
+                >thebacksidehouse@gmail.com</a
+              >
+            </li>
+            <li class="flex gap-4 mt-4 justify-center md:justify-start">
+              <a
+                href="https://www.instagram.com/thebacksidehouse/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-brand-sand/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
+                aria-label="Instagram"
+                ><i data-lucide="instagram" class="h-5 w-5"></i
+              ></a>
+              <a
+                href="https://www.tiktok.com/@thebacksidehouse"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-10 h-10 rounded-full bg-brand-sand/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
+                aria-label="TikTok"
+                ><svg
+                  class="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                  /></svg
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="text-sm font-light text-center md:text-left">
+          © 2026 The Backside House. Pura vida.
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botón flotante WhatsApp (estilo en custom.css) -->
+    <a
+      href="https://wa.me/50663638563"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="animate-bounce-slow wa-float-btn"
+      aria-label="Chat on WhatsApp"
+      title="Chat on WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+    </a>
+
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
+    <script src="js/translations-surfclass.js" defer></script>
+    <script src="js/surfclass.js" defer></script>
+  </body>
+</html>
