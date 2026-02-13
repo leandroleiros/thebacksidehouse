@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Content sources (Tailwind v4 - reemplaza tailwind.config.js content) */
+@source "../*.html";
+@source "../**/*.js";
+
 /* ================================================================
    THEME: Brand tokens para Tailwind v4
    Genera utilidades como bg-brand-sand, text-brand-teal, font-sans, etc.
@@ -36,7 +40,7 @@
 /* Estilos para el Carrusel */
 .carousel-container {
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+    overflow: auto;
 }
 
 .carousel-item {

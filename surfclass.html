@@ -30,9 +30,11 @@
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
+        base-uri 'self';
+        form-action 'self';
         script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-        img-src 'self' data: https:;
+        img-src 'self' data: https://flagcdn.com https://images.unsplash.com https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
         connect-src 'self' https://www.google-analytics.com;
         frame-src https://www.google.com;
@@ -50,7 +52,8 @@
         "provider": {
           "@type": "Hostel",
           "name": "The Backside House",
-          "url": "https://thebacksidehouse.com"
+          "url": "https://thebacksidehouse.com",
+          "telephone": "+506 6363 8563"
         },
         "areaServed": {
           "@type": "Place",
@@ -299,6 +302,7 @@
       </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <header
       class="relative min-h-screen flex items-center justify-center hero-bg text-brand-sand"
@@ -763,6 +767,8 @@
         </div>
       </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer

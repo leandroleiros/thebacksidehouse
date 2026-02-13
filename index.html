@@ -42,9 +42,11 @@
       http-equiv="Content-Security-Policy"
       content="
         default-src 'self';
+        base-uri 'self';
+        form-action 'self';
         script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
-        img-src 'self' data: https:;
+        img-src 'self' data: https://flagcdn.com https://randomuser.me https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
         connect-src 'self' https://www.google-analytics.com;
         frame-src https://www.google.com;
@@ -55,11 +57,16 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Hostel",
+        "@type": "WebPage",
+        "name": "The Backside House | Women Only Hostel in Tamarindo, Costa Rica",
+        "description": "The first women-only hostel in Tamarindo. Safety, community, Surf Lessons, and aesthetic vibes for solo travelers.",
+        "url": "https://thebacksidehouse.com/",
+        "mainEntity": {
+          "@type": "Hostel",
         "name": "The Backside House",
         "description": "The first women-only hostel in Tamarindo. Safety, community, Surf Lessons, and aesthetic vibes for solo travelers.",
         "url": "https://thebacksidehouse.com",
-        "telephone": "+50663638563",
+        "telephone": "+506 6363 8563",
         "image": [
           "https://thebacksidehouse.com/img/background-desktop.webp",
           "https://thebacksidehouse.com/img/surflessons-desktop.webp"
@@ -115,6 +122,7 @@
           "https://www.instagram.com/thebacksidehouse/",
           "https://www.tiktok.com/@thebacksidehouse"
         ]
+        }
       }
     </script>
 
@@ -396,6 +404,7 @@
       </div>
     </nav>
 
+    <main>
     <!-- Hero Section -->
     <section
       class="relative h-[100dvh] min-h-screen flex items-center justify-center hero-bg"
@@ -1404,6 +1413,8 @@
         </div>
       </div>
     </section>
+
+    </main>
 
     <!-- Footer -->
     <footer class="bg-brand-dark text-white py-10 md:py-10 lg:py-12">

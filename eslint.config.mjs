@@ -1,7 +1,8 @@
+import { defineConfig } from "eslint/config";
 import js from "@eslint/js";
 import globals from "globals";
 
-export default [
+export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs}"],
     ...js.configs.recommended,
@@ -19,8 +20,12 @@ export default [
       "prefer-const": "error",
       "no-unused-vars": [
         "error",
-        { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_" },
+        {
+          argsIgnorePattern: "^_",
+          caughtErrorsIgnorePattern: "^_",
+          varsIgnorePattern: "^(translations|surfclassTranslations)$",
+        },
       ],
     },
   },
-];
+]);
