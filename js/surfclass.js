@@ -106,6 +106,13 @@ document.body.addEventListener('click', function (e) {
     if (!el) return;
     const action = el.getAttribute('data-action');
     switch (action) {
+        case 'scroll-top':
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+            });
+            break;
         case 'toggle-menu':
             toggleMenu();
             break;
@@ -117,15 +124,25 @@ document.body.addEventListener('click', function (e) {
 });
 
 // ======================
-// NAVBAR SCROLL EFFECT
+// NAVBAR SCROLL EFFECT + BACK TO TOP
 // ======================
+const backToTopBtn = document.getElementById('back-to-top');
 window.addEventListener('scroll', function () {
     const nav = document.querySelector('nav');
-    if (!nav) return;
-    if (window.scrollY > 50) {
-        nav.classList.add('shadow-md');
-    } else {
-        nav.classList.remove('shadow-md');
+    if (nav) {
+        if (window.scrollY > 50) {
+            nav.classList.add('shadow-md');
+        } else {
+            nav.classList.remove('shadow-md');
+        }
+    }
+    // Show/hide back-to-top button
+    if (backToTopBtn) {
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
     }
 }, { passive: true });
 

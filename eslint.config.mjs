@@ -4,6 +4,9 @@ import globals from "globals";
 
 export default defineConfig([
   {
+    ignores: ["js/motion-init.js", "sw.js"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs}"],
     ...js.configs.recommended,
     languageOptions: {
@@ -14,7 +17,7 @@ export default defineConfig([
         dataLayer: "readonly",
         translations: "readonly",
         surfclassTranslations: "readonly",
-        marcaTranslations: "readonly",
+
         // Cross-file globals (modules loaded via <script defer>)
         throttle: "readonly",
         handleImageError: "readonly",
@@ -42,7 +45,7 @@ export default defineConfig([
         {
           argsIgnorePattern: "^_",
           caughtErrorsIgnorePattern: "^_",
-          varsIgnorePattern: "^(translations|surfclassTranslations|marcaTranslations|throttle|handleImageError|trackEvent|trackBooking|trackWhatsApp|trackSocialClick|trackMapClick|trackScrollDepth|openLightbox|closeLightbox|toggleLanguage|updateContent|initHeroTyped|currentLang|toggleMenu|updateNavbarOnScroll)$",
+          varsIgnorePattern: "^(translations|surfclassTranslations|throttle|handleImageError|trackEvent|trackBooking|trackWhatsApp|trackSocialClick|trackMapClick|trackScrollDepth|openLightbox|closeLightbox|toggleLanguage|updateContent|initHeroTyped|currentLang|toggleMenu|updateNavbarOnScroll)$",
         },
       ],
     },

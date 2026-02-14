@@ -2,7 +2,7 @@
 <html lang="en" id="html-root">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
     <title>
       The Backside House | Women Only Hostel in Tamarindo, Costa Rica
     </title>
@@ -50,7 +50,7 @@
         default-src 'self';
         base-uri 'self';
         form-action 'self';
-        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
         img-src 'self' data: https://flagcdn.com https://randomuser.me https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
@@ -124,6 +124,12 @@
           "name": "Body Positive Surf Lessons",
           "description": "Exclusive surf lessons for women with an inclusive and empathetic approach."
         },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "reviewCount": "6"
+        },
         "sameAs": [
           "https://www.instagram.com/thebacksidehouse/",
           "https://www.tiktok.com/@thebacksidehouse"
@@ -139,6 +145,8 @@
 
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4A7C85" />
 
     <!-- 2. PRELOAD INTELIGENTE -->
     <link
@@ -235,18 +243,17 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-20 md:h-24">
           <!-- LOGO -->
-          <div
-            class="flex-shrink-0 flex items-center cursor-pointer gap-3"
+          <a
+            href="#"
+            class="flex-shrink-0 flex items-center gap-3 text-inherit no-underline hover:opacity-90 transition-opacity"
             data-action="scroll-top"
-            role="button"
-            tabindex="0"
           >
             <img
               src="img/tbh_logo.webp"
               alt="The Backside House Logo"
               width="150"
               height="50"
-              class="h-10 md:h-12 w-auto logo-img rounded-md hover:opacity-90 transition-opacity js-image-fallback"
+              class="h-10 md:h-12 w-auto logo-img rounded-md hover:opacity-90 transition-opacity js-logo-fallback"
             />
 
             <span class="flex flex-col">
@@ -259,7 +266,7 @@
                 >Women Only</span
               >
             </span>
-          </div>
+          </a>
 
           <div class="hidden md:flex space-x-6 items-center">
             <a
@@ -419,6 +426,7 @@
       <div class="absolute inset-0 bg-black/30"></div>
       <div
         class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-12 md:mt-16"
+        data-motion-hero
       >
         <span
           class="inline-block py-1 px-3 rounded-full bg-brand-coral/90 text-white text-sm font-semibold tracking-wider mb-6 uppercase animate-fade-in-up"
@@ -446,7 +454,7 @@
             target="_blank"
             rel="noopener noreferrer"
             data-action="track-booking" data-track-label="Hero Section"
-            class="w-full sm:w-auto px-8 py-4 bg-brand-coral text-white text-base md:text-lg rounded-full font-semibold shadow-xl hover:bg-brand-coral/90 transition-all transform hover:scale-105 flex items-center justify-center"
+            class="w-full sm:w-auto px-8 py-4 bg-brand-coral text-white text-base md:text-lg rounded-full font-semibold shadow-xl hover:bg-brand-coralhover transition-all transform hover:scale-105 flex items-center justify-center"
             data-i18n="hero_cta_primary"
           >
             Check Availability
@@ -473,7 +481,7 @@
     <!-- Features Section -->
     <section id="concepto" class="py-12 md:py-16 lg:py-20 bg-brand-sand">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8 md:mb-12 lg:mb-16">
+        <div class="text-center mb-8 md:mb-12 lg:mb-16" data-motion="fade-up">
           <h2
             class="font-serif text-2xl md:text-3xl lg:text-4xl text-brand-dark mb-3 md:mb-4"
             data-i18n="concept_title"
@@ -481,8 +489,7 @@
             Why 'Women Only'?
           </h2>
           <div
-            class="w-24 h-1 bg-brand-coral mx-auto rounded-full"
-            style="margin-bottom: 1em"
+            class="w-24 h-1 bg-brand-coral mx-auto rounded-full mb-4"
           ></div>
           <p
             class="mt-3 md:mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base"
@@ -493,7 +500,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10" data-motion="stagger">
           <div
             class="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 vibe-card border-b-4 border-brand-teal"
           >
@@ -582,7 +589,7 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"
         >
-          <div>
+          <div data-motion="fade-up">
             <span
               class="text-brand-teal font-bold tracking-wider uppercase text-sm mb-2 block"
               data-i18n="surf_tag"
@@ -694,7 +701,7 @@
           </div>
 
           <!-- IMAGEN -->
-          <div class="relative">
+          <div class="relative" data-motion="scale-in">
             <div
               class="absolute -inset-4 border-2 border-brand-coral/30 rounded-3xl transform rotate-2"
             ></div>
@@ -721,7 +728,7 @@
               class="absolute bottom-8 -left-6 bg-white p-4 rounded-xl shadow-xl max-w-xs animate-bounce-slow hidden sm:block"
             >
               <div class="flex items-center gap-3">
-                <div class="text-yellow-400 text-2xl">
+                <div class="text-yellow-400 text-2xl" aria-hidden="true">
                   <i class="fas fa-star"></i>
                 </div>
                 <div>
@@ -779,8 +786,9 @@
                 </div>
                 <img
                   src="img/relax.webp"
-                  width="800"
-                  height="600"
+                  width="1024"
+                  height="683"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Community outdoor kitchen with rustic wooden island and bar, relaxed atmosphere for socializing in Tamarindo."
                   data-i18n-alt="alt_relax"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -803,8 +811,9 @@
                 </div>
                 <img
                   src="img/relax-2.webp"
-                  width="800"
-                  height="600"
+                  width="512"
+                  height="768"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Outdoor patio of the women's hostel in Tamarindo, with rustic stone table and green vine wall."
                   data-i18n-alt="alt_relax2"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -827,8 +836,9 @@
                 </div>
                 <img
                   src="img/pasillo.webp"
-                  width="800"
-                  height="600"
+                  width="960"
+                  height="1280"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Hostel hallway decorated with 'GIRLS GIRLS GIRLS' neon sign and motivational art."
                   data-i18n-alt="alt_pasillo"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -851,8 +861,9 @@
                 </div>
                 <img
                   src="img/bano.webp"
-                  width="800"
-                  height="600"
+                  width="960"
+                  height="1280"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Hostel bathroom detail with dreamcatcher decoration and evil eye on blue wall."
                   data-i18n-alt="alt_bano"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -875,8 +886,9 @@
                 </div>
                 <img
                   src="img/bathroom.webp"
-                  width="800"
-                  height="600"
+                  width="576"
+                  height="604"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Full view of the girls' hostel bathroom, clean, with blue wall and tiles."
                   data-i18n-alt="alt_bathroom"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -899,8 +911,9 @@
                 </div>
                 <img
                   src="img/room.webp"
-                  width="800"
-                  height="600"
+                  width="1280"
+                  height="960"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Female dorm with bunk bed, red privacy curtains, desk, and air conditioning."
                   data-i18n-alt="alt_room"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -923,8 +936,9 @@
                 </div>
                 <img
                   src="img/room2.webp"
-                  width="800"
-                  height="600"
+                  width="1280"
+                  height="960"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Shared dormitory with curtained bunk beds and security lockers in the background."
                   data-i18n-alt="alt_room2"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -947,8 +961,9 @@
                 </div>
                 <img
                   src="img/room3.webp"
-                  width="800"
-                  height="600"
+                  width="960"
+                  height="1280"
+                  sizes="(max-width: 768px) 85vw, 320px"
                   alt="Girls' room with private beds and view of the aesthetic hallway."
                   data-i18n-alt="alt_room3"
                   class="w-full h-80 object-cover hover:scale-105 transition-transform duration-700"
@@ -973,7 +988,7 @@
             <i class="fas fa-hand-pointer mr-1"></i>Tap to zoom
           </p>
 
-          <div class="lg:pl-10">
+          <div class="lg:pl-10" data-motion="fade-up">
             <span
               class="text-brand-coral font-bold tracking-wider uppercase text-sm"
               data-i18n="rooms_super"
@@ -996,25 +1011,25 @@
 
             <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_ac">Air Conditioning</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_lockers">Large security lockers</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_light"
                   >Reading light & individual plugs</span
                 >
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_clean">Always spotless bathrooms</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_wifi"
                   >High-speed WiFi (Nomad friendly)</span
                 >
@@ -1038,9 +1053,9 @@
 
     <!-- Experience Strip -->
     <section class="py-0 overflow-hidden bg-brand-teal">
-      <div class="flex flex-wrap md:flex-nowrap">
+      <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar md:overflow-visible">
         <div
-          class="w-full md:w-1/4 h-64 relative group cursor-pointer overflow-hidden"
+          class="flex-shrink-0 w-3/4 md:w-1/4 h-64 relative group cursor-pointer overflow-hidden snap-center"
         >
           <img
             src="img/chicasurf.webp"
@@ -1052,7 +1067,7 @@
             alt="Surf Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1062,7 +1077,7 @@
           </div>
         </div>
         <div
-          class="w-full md:w-1/4 h-64 relative group cursor-pointer overflow-hidden"
+          class="flex-shrink-0 w-3/4 md:w-1/4 h-64 relative group cursor-pointer overflow-hidden snap-center"
         >
           <img
             src="img/bienestar.webp"
@@ -1074,7 +1089,7 @@
             alt="Wellness Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1084,7 +1099,7 @@
           </div>
         </div>
         <div
-          class="w-full md:w-1/4 h-64 relative group cursor-pointer overflow-hidden"
+          class="flex-shrink-0 w-3/4 md:w-1/4 h-64 relative group cursor-pointer overflow-hidden snap-center"
         >
           <img
             src="img/friendship.webp"
@@ -1096,7 +1111,7 @@
             alt="Friendship Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1106,7 +1121,7 @@
           </div>
         </div>
         <div
-          class="w-full md:w-1/4 h-64 relative group cursor-pointer overflow-hidden"
+          class="flex-shrink-0 w-3/4 md:w-1/4 h-64 relative group cursor-pointer overflow-hidden snap-center"
         >
           <img
             src="img/relaxbeach.webp"
@@ -1118,7 +1133,7 @@
             alt="Relax Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1135,6 +1150,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2
           class="font-serif text-3xl text-brand-dark mb-12"
+          data-motion="fade-up"
           data-i18n="reviews_title"
         >
           What the girls say 💬
@@ -1146,10 +1162,10 @@
         >
           <!-- Review 1 -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1180,10 +1196,10 @@
 
           <!-- Review 2 -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1214,10 +1230,10 @@
 
           <!-- Review 3 -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1248,10 +1264,10 @@
 
           <!-- Review 4 (New) -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1282,10 +1298,10 @@
 
           <!-- Review 5 (New) -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1316,10 +1332,10 @@
 
           <!-- Review 6 (New) -->
           <div class="review-card-container review-card">
-            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm">
-              <i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i><i class="fas fa-star"></i
-              ><i class="fas fa-star"></i>
+            <div class="flex text-yellow-400 mb-3 md:mb-4 text-xs md:text-sm" role="img" aria-label="5 out of 5 stars">
+              <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i
+              ><i class="fas fa-star" aria-hidden="true"></i>
             </div>
             <p
               class="text-gray-600 italic mb-4 md:mb-6 text-sm md:text-base"
@@ -1359,6 +1375,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 bg-gray-50 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg"
+          data-motion="fade-up"
         >
           <div class="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
             <span
@@ -1424,7 +1441,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-white py-10 md:py-10 lg:py-12">
+    <footer class="bg-brand-dark text-white border-t border-gray-700 py-10 md:py-10 lg:py-12">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
@@ -1511,10 +1528,10 @@
             </h4>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-center justify-center md:justify-start">
-                <i class="fab fa-whatsapp mr-2"></i> +506 6363 8563
+                <i class="fab fa-whatsapp mr-2 flex-shrink-0"></i> +506 6363 8563
               </li>
               <li class="flex items-center justify-center md:justify-start">
-                <i class="far fa-envelope mr-2"></i> thebacksidehouse@gmail.com
+                <i class="far fa-envelope mr-2 flex-shrink-0"></i><span class="break-all">thebacksidehouse@gmail.com</span>
               </li>
               <li class="flex gap-4 mt-4 justify-center md:justify-start">
                 <a
@@ -1522,18 +1539,38 @@
                   target="_blank"
                   rel="noopener noreferrer"
                   data-action="track-social" data-social-platform="Instagram" data-social-location="Footer"
-                  class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral transition-colors"
+                  class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
                   aria-label="Instagram"
-                  ><i class="fab fa-instagram text-xl"></i
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg
                 ></a>
                 <a
                   href="https://www.tiktok.com/@thebacksidehouse"
                   target="_blank"
                   rel="noopener noreferrer"
                   data-action="track-social" data-social-platform="TikTok" data-social-location="Footer"
-                  class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral transition-colors"
+                  class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
                   aria-label="TikTok"
-                  ><i class="fab fa-tiktok text-xl"></i
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                    /></svg
                 ></a>
               </li>
             </ul>
@@ -1549,7 +1586,7 @@
     </footer>
 
     <!-- Globo "Join the house!" (a la izquierda del botón WhatsApp) -->
-    <div id="wa-bubble" class="wa-bubble animate-bounce-slow">
+    <div id="wa-bubble" class="wa-bubble">
       <button
         type="button"
         id="wa-bubble-close"
@@ -1562,13 +1599,26 @@
       <span data-i18n="wa_bubble_text">Join the house!</span>
     </div>
 
+    <!-- BOTÓN BACK TO TOP -->
+    <button
+      type="button"
+      id="back-to-top"
+      data-action="scroll-top"
+      class="back-to-top-btn"
+      aria-label="Back to top"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
     <!-- BOTÓN FLOTANTE WHATSAPP (estilo en custom.css) -->
     <a
       href="https://wa.me/50663638563"
       target="_blank"
       rel="noopener"
       data-action="track-whatsapp" data-whatsapp-section="Floating Button"
-      class="animate-bounce-slow wa-float-btn"
+      class="wa-float-btn"
       aria-label="Chat on WhatsApp"
       title="Let's chat on WhatsApp!"
     >
@@ -1596,5 +1646,11 @@
 
     <!-- Inicializador -->
     <script src="js/main.js" defer></script>
+
+    <!-- Motion One — animaciones scroll-triggered (ES module, carga async) -->
+    <script type="module" src="js/motion-init.js"></script>
+
+    <!-- Service Worker registration -->
+    <script src="js/sw-register.js" defer></script>
   </body>
 </html>

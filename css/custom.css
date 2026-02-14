@@ -2,6 +2,7 @@
    CUSTOM PROPERTIES (variables centralizadas)
    Hero: valores por defecto = index.html.
    surfclass.html sobrescribe en su <style>.
+   Los colores de marca se definen en input.css @theme.
    ================================================================ */
 :root {
     /* Hero background */
@@ -9,15 +10,6 @@
     --hero-image-desktop: url('../img/background-desktop.webp');
     --hero-gradient-start: rgba(0, 0, 0, 0.3);
     --hero-gradient-end: rgba(0, 0, 0, 0.4);
-
-    /* Brand colors */
-    --color-brand-sand: #FDFBF7;
-    --color-brand-coral: #E8A6A0;
-    --color-brand-coralhover: #D68C86;
-    --color-brand-teal: #4A7C85;
-    --color-brand-dark: #2D3748;
-    --color-brand-gold: #F6E05E;
-    --color-brand-whatsapp: #25D366;
 }
 
 .hero-bg {
@@ -34,123 +26,20 @@
     }
 }
 
-/* ================================================================
-   COLORES CUSTOM DE BRAND
-   ================================================================ */
-
-/* Background Colors */
-.bg-brand-sand { background-color: var(--color-brand-sand); }
-.bg-brand-coral { background-color: var(--color-brand-coral); }
-.bg-brand-teal { background-color: var(--color-brand-teal); }
-.bg-brand-dark { background-color: var(--color-brand-dark); }
-.bg-brand-gold { background-color: var(--color-brand-gold); }
-.bg-brand-whatsapp { background-color: var(--color-brand-whatsapp); }
-
-/* Text Colors */
-.text-brand-sand { color: var(--color-brand-sand); }
-.text-brand-coral { color: var(--color-brand-coral); }
-.text-brand-teal { color: var(--color-brand-teal); }
-.text-brand-dark { color: var(--color-brand-dark); }
-.text-brand-gold { color: var(--color-brand-gold); }
-
-/* Border Colors */
-.border-brand-sand { border-color: var(--color-brand-sand); }
-.border-brand-coral { border-color: var(--color-brand-coral); }
-.border-brand-teal { border-color: var(--color-brand-teal); }
-.border-brand-gold { border-color: var(--color-brand-gold); }
-
-/* Hover Background Colors */
-.hover\:bg-brand-coralhover:hover { background-color: var(--color-brand-coralhover); }
-.hover\:bg-brand-teal:hover { background-color: var(--color-brand-teal); }
-.hover\:bg-brand-dark:hover { background-color: var(--color-brand-dark); }
-.hover\:bg-opacity-90:hover { opacity: 0.9; }
-
-/* Hover Text Colors */
-.hover\:text-brand-coral:hover { color: var(--color-brand-coral); }
-.hover\:text-brand-teal:hover { color: var(--color-brand-teal); }
-
 /* Botón Vibe (Hero) - hover blanco sin !important */
 a[data-action="track-social"][data-social-platform="Instagram"][data-social-location="Hero"].bg-white\/10:hover {
-    background-color: #ffffff;
+    background-color: var(--color-brand-sand);
     color: var(--color-brand-teal);
 }
 
-/* Backgrounds con Opacidad */
-.bg-white\/90 { background-color: rgba(255, 255, 255, 0.9); }
-.bg-white\/95 { background-color: rgba(255, 255, 255, 0.95); }
-.bg-white\/10 { background-color: rgba(255, 255, 255, 0.1); }
-.bg-black\/0 { background-color: rgba(0, 0, 0, 0); }
-.bg-black\/10 { background-color: rgba(0, 0, 0, 0.1); }
-.bg-black\/30 { background-color: rgba(0, 0, 0, 0.3); }
-.bg-black\/40 { background-color: rgba(0, 0, 0, 0.4); }
-.bg-black\/90 { background-color: rgba(0, 0, 0, 0.9); }
-
-/* Brand Colors con Opacidad */
-.bg-brand-coral\/90 { background-color: rgba(232, 166, 160, 0.9); }
-.bg-brand-coral\/80 { background-color: rgba(232, 166, 160, 0.8); }
-.bg-brand-teal\/90 { background-color: rgba(74, 124, 133, 0.9); }
-.bg-brand-teal\/80 { background-color: rgba(74, 124, 133, 0.8); }
-
-/* Borders con Opacidad */
-.border-white\/50 { border-color: rgba(255, 255, 255, 0.5); }
-.border-brand-coral\/30 { border-color: rgba(232, 166, 160, 0.3); }
-
-/* Hover Backgrounds con Opacidad */
-.group-hover\/img\:bg-black\/20:is(:where(.group\/img):hover *) { 
-    background-color: rgba(0, 0, 0, 0.2); 
+/* Shadow Text (para hero — doble capa para legibilidad en sol directo) */
+.shadow-text {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ================================================================
-   FALLBACK: clases con opacidad usadas en surfclass.html
-   Tailwind CDN las genera, pero si falla quedan estas como respaldo.
+   ANIMACIONES
    ================================================================ */
-
-/* Text brand-sand con opacidad */
-.text-brand-sand\/50 { color: rgba(253, 251, 247, 0.5); }
-.text-brand-sand\/60 { color: rgba(253, 251, 247, 0.6); }
-.text-brand-sand\/70 { color: rgba(253, 251, 247, 0.7); }
-.text-brand-sand\/95 { color: rgba(253, 251, 247, 0.95); }
-
-/* Text brand-dark con opacidad */
-.text-brand-dark\/50 { color: rgba(45, 55, 72, 0.5); }
-.text-brand-dark\/60 { color: rgba(45, 55, 72, 0.6); }
-.text-brand-dark\/70 { color: rgba(45, 55, 72, 0.7); }
-.text-brand-dark\/80 { color: rgba(45, 55, 72, 0.8); }
-
-/* Background brand con opacidad */
-.bg-brand-dark\/50 { background-color: rgba(45, 55, 72, 0.5); }
-.bg-brand-sand\/10 { background-color: rgba(253, 251, 247, 0.1); }
-.bg-brand-sand\/50 { background-color: rgba(253, 251, 247, 0.5); }
-.bg-brand-teal\/10 { background-color: rgba(74, 124, 133, 0.1); }
-.bg-brand-teal\/20 { background-color: rgba(74, 124, 133, 0.2); }
-.hover\:bg-brand-teal\/20:hover { background-color: rgba(74, 124, 133, 0.2); }
-.bg-white\/5 { background-color: rgba(255, 255, 255, 0.05); }
-.bg-white\/80 { background-color: rgba(255, 255, 255, 0.8); }
-
-/* Border con opacidad */
-.border-brand-sand\/10 { border-color: rgba(253, 251, 247, 0.1); }
-.border-brand-teal\/20 { border-color: rgba(74, 124, 133, 0.2); }
-.border-white\/10 { border-color: rgba(255, 255, 255, 0.1); }
-
-/* Font Families */
-.font-sans { font-family: 'Poppins', sans-serif; }
-.font-serif { font-family: 'Playfair Display', serif; }
-
-/* Backdrop Blur */
-.backdrop-blur-sm {
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-}
-
-.backdrop-blur-md {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* Shadow Text (para hero) */
-.shadow-text {
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
 
 /* Animación bounce lenta */
 @keyframes bounce-slow {
@@ -164,66 +53,6 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
 
 .animate-bounce-slow {
     animation: bounce-slow 3s ease-in-out infinite;
-}
-
-/* Botón flotante WhatsApp (compartido index.html + surfclass.html) */
-.wa-float-btn {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 99999;
-    width: 4rem;
-    height: 4rem;
-    min-width: 48px;
-    min-height: 48px;
-    border-radius: 50%;
-    background-color: #25D366;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    font-size: 1.75rem;
-    transition: transform 0.3s ease;
-}
-.wa-float-btn svg {
-    width: 1.75rem;
-    height: 1.75rem;
-}
-.wa-float-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Globo "Join the house!" junto al botón WhatsApp (solo index.html) */
-.wa-bubble {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 5.5rem;
-    z-index: 99999;
-    max-width: 300px;
-    background: #ffffff;
-    color: #1f2937;
-    padding: 0.75rem 2rem 0.75rem 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e5e7eb;
-    font-size: 0.875rem;
-    font-weight: 500;
-}
-.wa-bubble-close {
-    position: absolute;
-    top: 0.4rem;
-    right: 0.5rem;
-    width: 1.25rem;
-    height: 1.25rem;
-    border: none;
-    background: transparent;
-    color: #9ca3af;
-    font-size: 1.1rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 0;
 }
 
 /* Animación blob */
@@ -272,3 +101,123 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* ================================================================
+   COMPONENTES
+   ================================================================ */
+
+/* Botón Back to Top (compartido index.html + surfclass.html) */
+.back-to-top-btn {
+    position: fixed;
+    bottom: max(5.5rem, calc(env(safe-area-inset-bottom, 0px) + 5.5rem));
+    right: 1rem;
+    z-index: 50;
+    width: 3rem;
+    height: 3rem;
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-brand-teal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.back-to-top-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+.back-to-top-btn:hover {
+    background-color: var(--color-brand-coralhover);
+    transform: translateY(-2px);
+}
+.back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Botón flotante WhatsApp (compartido index.html + surfclass.html) */
+.wa-float-btn {
+    position: fixed;
+    bottom: max(1rem, env(safe-area-inset-bottom, 0px));
+    right: 1rem;
+    z-index: 50;
+    width: 4rem;
+    height: 4rem;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 50%;
+    background-color: var(--color-brand-whatsapp);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-size: 1.75rem;
+    transition: transform 0.3s ease;
+}
+.wa-float-btn svg {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+.wa-float-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Globo "Join the house!" junto al botón WhatsApp (solo index.html) */
+.wa-bubble {
+    position: fixed;
+    bottom: max(1.5rem, env(safe-area-inset-bottom, 0px));
+    right: 5.5rem;
+    z-index: 50;
+    max-width: min(300px, calc(100vw - 7rem));
+    background: var(--color-brand-sand);
+    color: var(--color-brand-dark);
+    padding: 0.75rem 2rem 0.75rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--color-brand-coral, #e5e7eb);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.wa-bubble-close {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: none;
+    background: transparent;
+    color: var(--color-brand-dark);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ================================================================
+   ACCESIBILIDAD: focus-visible para navegación por teclado
+   ================================================================ */
+a:focus-visible,
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-brand-sand), 0 0 0 4px var(--color-brand-teal);
+}
+
+/* Touch: eliminar delay de 300ms en móvil */
+button, a {
+    touch-action: manipulation;
+}
+
+/* Feedback táctil al pulsar */
+button:active, a:active {
+    transform: scale(0.97);
+}

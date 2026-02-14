@@ -2,7 +2,7 @@
 
 const surfclassTranslations = {
     en: {
-        nav_home: "Home",
+        nav_hostel: "Hostel",
         nav_vibra: "Our Vibe",
         nav_classes: "Classes",
         nav_book: "Book",
@@ -50,10 +50,12 @@ const surfclassTranslations = {
         booking_wa_sub: "Immediate response",
         booking_location: "Location",
         footer_contact: "Contact",
-        menu_open: "Open menu",
+        footer_desc: "Come for the waves, stay for the vibe. Surf lessons in Tamarindo with certified instructors.",
+        footer_links: "Quick Links",
+        footer_copy: "\u00a9 2026 The Backside House. All rights reserved.",
     },
     es: {
-        nav_home: "Inicio",
+        nav_hostel: "Hostel",
         nav_vibra: "Nuestra Vibra",
         nav_classes: "Clases",
         nav_book: "Reservar",
@@ -101,6 +103,8 @@ const surfclassTranslations = {
         booking_wa_sub: "Respuesta inmediata",
         booking_location: "Ubicación",
         footer_contact: "Contacto",
-        menu_open: "Abrir menú",
+        footer_desc: "Vení por las olas, quedate por la vibra. Clases de surf en Tamarindo con instructores certificados.",
+        footer_links: "Enlaces Rápidos",
+        footer_copy: "\u00a9 2026 The Backside House. Todos los derechos reservados.",
     },
 };
