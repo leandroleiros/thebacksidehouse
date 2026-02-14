@@ -124,25 +124,32 @@ document.body.addEventListener('click', function (e) {
 });
 
 // ======================
-// NAVBAR SCROLL EFFECT + BACK TO TOP
+// NAVBAR SCROLL EFFECT + BACK TO TOP (RAF-throttled)
 // ======================
 const backToTopBtn = document.getElementById('back-to-top');
+const navElement = document.querySelector('nav');
+let scrollTicking = false;
+
 window.addEventListener('scroll', function () {
-    const nav = document.querySelector('nav');
-    if (nav) {
-        if (window.scrollY > 50) {
-            nav.classList.add('shadow-md');
-        } else {
-            nav.classList.remove('shadow-md');
-        }
-    }
-    // Show/hide back-to-top button
-    if (backToTopBtn) {
-        if (window.scrollY > 300) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
+    if (!scrollTicking) {
+        scrollTicking = true;
+        requestAnimationFrame(function () {
+            if (navElement) {
+                if (window.scrollY > 50) {
+                    navElement.classList.add('shadow-md');
+                } else {
+                    navElement.classList.remove('shadow-md');
+                }
+            }
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
+            scrollTicking = false;
+        });
     }
 }, { passive: true });
 

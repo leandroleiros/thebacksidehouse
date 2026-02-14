@@ -19,33 +19,42 @@ const PRECACHE_URLS = [
   "/js/surfclass.js",
   "/js/motion-init.js",
   "/js/sw-register.js",
+  "/js/gtag-init.js",
   "/favicon.ico",
   "/manifest.json",
 ];
 
-// Install: precache core assets
+const OFFLINE_RESPONSE = new Response("Offline", {
+  status: 503,
+  statusText: "Service Unavailable",
+  headers: { "Content-Type": "text/plain" },
+});
+
+// Install: precache core assets, then activate immediately
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(PRECACHE_URLS))
+    caches
+      .open(CACHE_NAME)
+      .then((cache) => cache.addAll(PRECACHE_URLS))
+      .then(() => self.skipWaiting())
   );
-  self.skipWaiting();
 });
 
-// Activate: clean old caches
+// Activate: clean old caches and claim clients
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((key) => key !== CACHE_NAME)
-          .map((key) => caches.delete(key))
+    caches
+      .keys()
+      .then((keys) =>
+        Promise.all(
+          keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+        )
       )
-    )
+      .then(() => self.clients.claim())
   );
-  self.clients.claim();
 });
 
-// Fetch: network-first for HTML, stale-while-revalidate for everything else
+// Fetch: network-first for HTML, stale-while-revalidate for same-origin assets
 self.addEventListener("fetch", (event) => {
   const { request } = event;
 
@@ -67,7 +76,9 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match(request))
+        .catch(() =>
+          caches.match(request).then((cached) => cached || caches.match("/index.html"))
+        )
     );
   } else {
     // Stale-while-revalidate for assets (CSS, JS, images, fonts)
@@ -79,7 +90,7 @@ self.addEventListener("fetch", (event) => {
             caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
             return response;
           })
-          .catch(() => cached);
+          .catch(() => cached || OFFLINE_RESPONSE.clone());
 
         return cached || fetchPromise;
       })

@@ -108,7 +108,7 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
 /* Botón Back to Top (compartido index.html + surfclass.html) */
 .back-to-top-btn {
     position: fixed;
-    bottom: max(5.5rem, calc(env(safe-area-inset-bottom, 0px) + 5.5rem));
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
     right: 1rem;
     z-index: 50;
     width: 3rem;
@@ -127,20 +127,23 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 .back-to-top-btn svg {
     width: 1.25rem;
     height: 1.25rem;
 }
-.back-to-top-btn:hover {
-    background-color: var(--color-brand-coralhover);
-    transform: translateY(-2px);
-}
 .back-to-top-btn.visible {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+}
+
+@media (hover: hover) {
+    .back-to-top-btn.visible:hover {
+        background-color: var(--color-brand-coralhover);
+        transform: translateY(-2px);
+    }
 }
 
 /* Botón flotante WhatsApp (compartido index.html + surfclass.html) */
