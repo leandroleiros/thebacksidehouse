@@ -1,7 +1,7 @@
 /**
  * Motion One — scroll-triggered animations & microinteractions
- * Carga como ES module desde CDN. Fallback: CSS nativo (los elementos
- * se muestran normalmente sin JS gracias al <noscript> / sin opacity:0).
+ * Carga como ES module dinámico desde CDN. Si el CDN falla, los elementos
+ * se muestran normalmente (no se ocultan sin confirmación de carga).
  *
  * Uso: los elementos con [data-motion] se animan al entrar en viewport.
  *   data-motion="fade-up"     → fade + translateY
@@ -10,22 +10,22 @@
  *   data-motion="stagger"     → hijos directos con stagger
  */
 
-import {
-    animate,
-    inView,
-    stagger,
-} from "https://cdn.jsdelivr.net/npm/motion@11.13.5/+esm";
-
 /* ── Respetar prefers-reduced-motion ── */
 const prefersReduced = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
 ).matches;
 
 if (!prefersReduced) {
-    initMotion();
+    import("https://cdn.jsdelivr.net/npm/motion@11.13.5/+esm")
+        .then(({ animate, inView, stagger }) => {
+            initMotion(animate, inView, stagger);
+        })
+        .catch(() => {
+            /* CDN caído: no ocultar nada, los elementos quedan visibles */
+        });
 }
 
-function initMotion() {
+function initMotion(animate, inView, stagger) {
     /* ────────────────────────────────────────────────
        1. SCROLL-TRIGGERED REVEALS (data-motion)
        ──────────────────────────────────────────────── */
@@ -49,7 +49,7 @@ function initMotion() {
     Object.entries(animationConfig).forEach(([type, config]) => {
         const selector = `[data-motion='${type}']`;
 
-        /* Ocultar antes de observar */
+        /* Ocultar DESPUÉS de confirmar que Motion cargó */
         document.querySelectorAll(selector).forEach((el) => {
             el.style.opacity = "0";
             el.style.willChange = "opacity, transform";
@@ -65,7 +65,6 @@ function initMotion() {
 
     /* stagger: ocultar HIJOS y animar con delay escalonado */
     document.querySelectorAll("[data-motion='stagger']").forEach((container) => {
-        /* Ocultar cada hijo individual */
         Array.from(container.children).forEach((child) => {
             child.style.opacity = "0";
             child.style.willChange = "opacity, transform";
@@ -98,17 +97,26 @@ function initMotion() {
     }
 
     /* ────────────────────────────────────────────────
-       3. HERO PARALLAX SUTIL (solo desktop)
+       3. HERO PARALLAX SUTIL (solo desktop, RAF-throttled)
        ──────────────────────────────────────────────── */
     const heroContent = document.querySelector("[data-motion-hero]");
     if (heroContent && window.innerWidth >= 768) {
+        const heroSection = heroContent.closest("section");
+        const heroHeight = heroSection ? heroSection.offsetHeight : 800;
+        let parallaxTicking = false;
+
         window.addEventListener("scroll", () => {
-            const scrollY = window.scrollY;
-            const heroHeight = heroContent.closest("section")?.offsetHeight || 800;
-            if (scrollY < heroHeight) {
-                const progress = scrollY / heroHeight;
-                heroContent.style.transform = `translateY(${progress * 40}px)`;
-                heroContent.style.opacity = `${1 - progress * 0.4}`;
+            if (!parallaxTicking) {
+                parallaxTicking = true;
+                requestAnimationFrame(() => {
+                    const scrollY = window.scrollY;
+                    if (scrollY < heroHeight) {
+                        const progress = scrollY / heroHeight;
+                        heroContent.style.transform = `translateY(${progress * 40}px)`;
+                        heroContent.style.opacity = `${1 - progress * 0.4}`;
+                    }
+                    parallaxTicking = false;
+                });
             }
         }, { passive: true });
     }
