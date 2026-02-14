@@ -20,11 +20,20 @@ const observer = new IntersectionObserver((entries) => {
 // SCROLL HANDLER (RAF batched)
 // ======================
 let navbarScrollTicking = false;
+const backToTopBtn = document.getElementById('back-to-top');
 function handleScroll() {
     if (!navbarScrollTicking) {
         navbarScrollTicking = true;
         requestAnimationFrame(function () {
             updateNavbarOnScroll();
+            // Show/hide back-to-top button
+            if (backToTopBtn) {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('visible');
+                } else {
+                    backToTopBtn.classList.remove('visible');
+                }
+            }
             navbarScrollTicking = false;
         });
     }
@@ -54,7 +63,10 @@ document.body.addEventListener('click', function (e) {
             break;
         case 'scroll-top':
             e.preventDefault();
-            window.scrollTo(0, 0);
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
+            });
             break;
         case 'track-booking':
             if (el.getAttribute('data-close-menu') === 'true') {

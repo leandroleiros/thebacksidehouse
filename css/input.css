@@ -42,7 +42,7 @@
 /* Estilos para el Carrusel */
 .carousel-container {
     scroll-snap-type: x mandatory;
-    overflow: auto;
+    overflow: auto hidden;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -73,7 +73,7 @@
     align-items: center;
     justify-content: center;
     color: #6b7280;
-    font-size: 12px;
+    font-size: 0.75rem;
     border-radius: 4px;
 }
 

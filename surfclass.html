@@ -38,7 +38,7 @@
         default-src 'self';
         base-uri 'self';
         form-action 'self';
-        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
         img-src 'self' data: https://flagcdn.com https://images.unsplash.com https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
@@ -97,6 +97,8 @@
 
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4A7C85" />
 
     <!-- Fuentes primero para que estén disponibles al pintar (Poppins + Playfair) -->
     <link
@@ -383,7 +385,7 @@
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         >
           <!-- Orden visual: Imagen primero en móvil para impacto -->
-          <div class="relative group mb-8 lg:mb-0">
+          <div class="relative group mb-8 lg:mb-0" data-motion="scale-in">
             <div
               class="absolute -top-3 -left-3 lg:-top-4 lg:-left-4 w-full h-full border-2 border-brand-teal/20 rounded-2xl z-0 transform translate-x-2 translate-y-2 lg:translate-x-4 lg:translate-y-4"
             ></div>
@@ -407,7 +409,7 @@
               </p>
             </div>
           </div>
-          <div>
+          <div data-motion="fade-up">
             <div class="flex items-center mb-3 md:mb-4">
               <span
                 class="w-8 md:w-12 h-[1px] bg-brand-dark mr-3 md:mr-4"
@@ -480,7 +482,7 @@
     <!-- Surf Sessions Section -->
     <section id="clases" class="py-12 md:py-16 lg:py-20 wave-pattern relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12 md:mb-20">
+        <div class="text-center mb-12 md:mb-20" data-motion="fade-up">
           <span
             class="text-brand-coral font-serif italic text-lg md:text-xl mb-2 block"
             >Level Up</span
@@ -505,6 +507,7 @@
 
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto"
+          data-motion="stagger"
         >
           <!-- Group Card (MOVED TO FIRST POSITION) -->
           <div
@@ -676,7 +679,7 @@
       <div
         class="absolute top-0 right-0 w-96 h-96 bg-brand-teal rounded-full mix-blend-overlay filter blur-3xl opacity-20 -translate-y-1/2 translate-x-1/4"
       ></div>
-      <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+      <div class="max-w-4xl mx-auto px-4 relative z-10 text-center" data-motion="fade-up">
         <h2 class="font-serif text-4xl md:text-5xl mb-4 md:mb-6 text-white">
           Let's <span class="text-brand-coral italic">Surf</span>
         </h2>
@@ -865,10 +868,10 @@
             </h4>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-center justify-center md:justify-start">
-                <i class="fab fa-whatsapp mr-2"></i> +506 6363 8563
+                <i class="fab fa-whatsapp mr-2 flex-shrink-0"></i> +506 6363 8563
               </li>
               <li class="flex items-center justify-center md:justify-start">
-                <i class="far fa-envelope mr-2"></i> thebacksidehouse@gmail.com
+                <i class="far fa-envelope mr-2 flex-shrink-0"></i><span class="break-all">thebacksidehouse@gmail.com</span>
               </li>
               <li class="flex gap-4 mt-4 justify-center md:justify-start">
                 <a
@@ -922,12 +925,25 @@
       </div>
     </footer>
 
+    <!-- BOTÓN BACK TO TOP -->
+    <button
+      type="button"
+      id="back-to-top"
+      data-action="scroll-top"
+      class="back-to-top-btn"
+      aria-label="Back to top"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
     <!-- Botón flotante WhatsApp (estilo en custom.css) -->
     <a
       href="https://wa.me/50663638563"
       target="_blank"
       rel="noopener noreferrer"
-      class="animate-bounce-slow wa-float-btn"
+      class="wa-float-btn"
       aria-label="Chat on WhatsApp"
       title="Chat on WhatsApp"
     >
@@ -941,5 +957,11 @@
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
     <script src="js/translations-surfclass.js" defer></script>
     <script src="js/surfclass.js" defer></script>
+
+    <!-- Motion One — animaciones scroll-triggered (ES module, carga async) -->
+    <script type="module" src="js/motion-init.js"></script>
+
+    <!-- Service Worker registration -->
+    <script src="js/sw-register.js" defer></script>
   </body>
 </html>

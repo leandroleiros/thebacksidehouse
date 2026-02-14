@@ -50,7 +50,7 @@
         default-src 'self';
         base-uri 'self';
         form-action 'self';
-        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com;
+        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
         img-src 'self' data: https://flagcdn.com https://randomuser.me https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
@@ -145,6 +145,8 @@
 
     <link rel="icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="favicon.ico" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#4A7C85" />
 
     <!-- 2. PRELOAD INTELIGENTE -->
     <link
@@ -424,6 +426,7 @@
       <div class="absolute inset-0 bg-black/30"></div>
       <div
         class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-12 md:mt-16"
+        data-motion-hero
       >
         <span
           class="inline-block py-1 px-3 rounded-full bg-brand-coral/90 text-white text-sm font-semibold tracking-wider mb-6 uppercase animate-fade-in-up"
@@ -478,7 +481,7 @@
     <!-- Features Section -->
     <section id="concepto" class="py-12 md:py-16 lg:py-20 bg-brand-sand">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8 md:mb-12 lg:mb-16">
+        <div class="text-center mb-8 md:mb-12 lg:mb-16" data-motion="fade-up">
           <h2
             class="font-serif text-2xl md:text-3xl lg:text-4xl text-brand-dark mb-3 md:mb-4"
             data-i18n="concept_title"
@@ -486,8 +489,7 @@
             Why 'Women Only'?
           </h2>
           <div
-            class="w-24 h-1 bg-brand-coral mx-auto rounded-full"
-            style="margin-bottom: 1em"
+            class="w-24 h-1 bg-brand-coral mx-auto rounded-full mb-4"
           ></div>
           <p
             class="mt-3 md:mt-4 text-gray-600 max-w-2xl mx-auto text-sm md:text-base"
@@ -498,7 +500,7 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 lg:gap-10" data-motion="stagger">
           <div
             class="bg-white p-6 md:p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 vibe-card border-b-4 border-brand-teal"
           >
@@ -587,7 +589,7 @@
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center"
         >
-          <div>
+          <div data-motion="fade-up">
             <span
               class="text-brand-teal font-bold tracking-wider uppercase text-sm mb-2 block"
               data-i18n="surf_tag"
@@ -699,7 +701,7 @@
           </div>
 
           <!-- IMAGEN -->
-          <div class="relative">
+          <div class="relative" data-motion="scale-in">
             <div
               class="absolute -inset-4 border-2 border-brand-coral/30 rounded-3xl transform rotate-2"
             ></div>
@@ -986,7 +988,7 @@
             <i class="fas fa-hand-pointer mr-1"></i>Tap to zoom
           </p>
 
-          <div class="lg:pl-10">
+          <div class="lg:pl-10" data-motion="fade-up">
             <span
               class="text-brand-coral font-bold tracking-wider uppercase text-sm"
               data-i18n="rooms_super"
@@ -1009,25 +1011,25 @@
 
             <ul class="space-y-3 md:space-y-4 mb-6 md:mb-8">
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_ac">Air Conditioning</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_lockers">Large security lockers</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_light"
                   >Reading light & individual plugs</span
                 >
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_clean">Always spotless bathrooms</span>
               </li>
               <li class="flex items-center text-gray-700">
-                <i class="fas fa-check text-brand-teal mr-3"></i>
+                <i class="fas fa-check text-brand-teal mr-3 flex-shrink-0"></i>
                 <span data-i18n="amenity_wifi"
                   >High-speed WiFi (Nomad friendly)</span
                 >
@@ -1065,7 +1067,7 @@
             alt="Surf Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1087,7 +1089,7 @@
             alt="Wellness Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1109,7 +1111,7 @@
             alt="Friendship Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1131,7 +1133,7 @@
             alt="Relax Experience"
           />
           <div
-            class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-6 md:items-center md:pb-0 md:bg-black/40 md:from-transparent md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
           >
             <span
               class="text-white font-serif text-xl md:text-2xl"
@@ -1148,6 +1150,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2
           class="font-serif text-3xl text-brand-dark mb-12"
+          data-motion="fade-up"
           data-i18n="reviews_title"
         >
           What the girls say 💬
@@ -1372,6 +1375,7 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 bg-gray-50 rounded-2xl md:rounded-3xl overflow-hidden shadow-lg"
+          data-motion="fade-up"
         >
           <div class="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
             <span
@@ -1524,10 +1528,10 @@
             </h4>
             <ul class="space-y-2 text-gray-400">
               <li class="flex items-center justify-center md:justify-start">
-                <i class="fab fa-whatsapp mr-2"></i> +506 6363 8563
+                <i class="fab fa-whatsapp mr-2 flex-shrink-0"></i> +506 6363 8563
               </li>
               <li class="flex items-center justify-center md:justify-start">
-                <i class="far fa-envelope mr-2"></i> thebacksidehouse@gmail.com
+                <i class="far fa-envelope mr-2 flex-shrink-0"></i><span class="break-all">thebacksidehouse@gmail.com</span>
               </li>
               <li class="flex gap-4 mt-4 justify-center md:justify-start">
                 <a
@@ -1582,7 +1586,7 @@
     </footer>
 
     <!-- Globo "Join the house!" (a la izquierda del botón WhatsApp) -->
-    <div id="wa-bubble" class="wa-bubble animate-bounce-slow">
+    <div id="wa-bubble" class="wa-bubble">
       <button
         type="button"
         id="wa-bubble-close"
@@ -1595,13 +1599,26 @@
       <span data-i18n="wa_bubble_text">Join the house!</span>
     </div>
 
+    <!-- BOTÓN BACK TO TOP -->
+    <button
+      type="button"
+      id="back-to-top"
+      data-action="scroll-top"
+      class="back-to-top-btn"
+      aria-label="Back to top"
+    >
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+
     <!-- BOTÓN FLOTANTE WHATSAPP (estilo en custom.css) -->
     <a
       href="https://wa.me/50663638563"
       target="_blank"
       rel="noopener"
       data-action="track-whatsapp" data-whatsapp-section="Floating Button"
-      class="animate-bounce-slow wa-float-btn"
+      class="wa-float-btn"
       aria-label="Chat on WhatsApp"
       title="Let's chat on WhatsApp!"
     >
@@ -1629,5 +1646,11 @@
 
     <!-- Inicializador -->
     <script src="js/main.js" defer></script>
+
+    <!-- Motion One — animaciones scroll-triggered (ES module, carga async) -->
+    <script type="module" src="js/motion-init.js"></script>
+
+    <!-- Service Worker registration -->
+    <script src="js/sw-register.js" defer></script>
   </body>
 </html>

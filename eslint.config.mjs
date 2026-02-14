@@ -4,6 +4,9 @@ import globals from "globals";
 
 export default defineConfig([
   {
+    ignores: ["js/motion-init.js", "sw.js"],
+  },
+  {
     files: ["**/*.{js,mjs,cjs}"],
     ...js.configs.recommended,
     languageOptions: {
