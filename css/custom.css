@@ -272,3 +272,22 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
     animation: fadeInUp 0.8s ease-out;
 }
 
+/* ================================================================
+   ACCESIBILIDAD: focus-visible para navegación por teclado
+   ================================================================ */
+a:focus-visible,
+button:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #fdfbf7, 0 0 0 4px #4a7c85;
+}
+
+/* Touch: eliminar delay de 300ms en móvil */
+button, a {
+    touch-action: manipulation;
+}
+
+/* Feedback táctil al pulsar */
+button:active, a:active {
+    transform: scale(0.97);
+}
+
