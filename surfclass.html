@@ -65,6 +65,26 @@
           "@type": "Place",
           "name": "Tamarindo",
           "address": { "@type": "PostalAddress", "addressLocality": "Tamarindo", "addressCountry": "CR" }
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Surf Lessons",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Group Surf Session",
+              "price": "55",
+              "priceCurrency": "USD",
+              "description": "Group surf lessons from $55/person (2-4 people)"
+            },
+            {
+              "@type": "Offer",
+              "name": "Private Surf Session",
+              "price": "85",
+              "priceCurrency": "USD",
+              "description": "Private 1:1 surf lesson, 2 hours, all equipment included"
+            }
+          ]
         }
       }
     </script>
@@ -148,8 +168,9 @@
         <div class="flex justify-between items-center h-20 md:h-24">
           <!-- LOGO -->
           <a
-            href="index.html"
+            href="#"
             class="flex-shrink-0 flex items-center gap-3 text-inherit no-underline hover:opacity-90 transition-opacity"
+            data-action="scroll-top"
           >
             <img
               src="img/tbh_logo.webp"
@@ -165,7 +186,7 @@
               >
               <span
                 class="text-brand-coral font-sans text-sm md:text-base lg:text-lg font-normal"
-                >Tamarindo, Costa Rica</span
+                >Surf School</span
               >
             </span>
           </a>
@@ -175,8 +196,8 @@
             <a
               href="index.html"
               class="text-gray-600 hover:text-brand-coral transition-colors font-medium"
-              data-i18n="nav_home"
-              >Home</a
+              data-i18n="nav_hostel"
+              >Hostel</a
             >
             <a
               href="#vibra"
@@ -268,8 +289,8 @@
             href="index.html"
             data-action="toggle-menu"
             class="block px-4 py-4 text-gray-700 hover:text-brand-coral hover:bg-gray-50 rounded-md text-base md:text-lg min-h-[44px] flex items-center justify-center"
-            data-i18n="nav_home"
-            >Home</a
+            data-i18n="nav_hostel"
+            >Hostel</a
           >
           <a
             href="#vibra"
@@ -333,7 +354,7 @@
         >
           <a
             href="#clases"
-            class="w-full sm:w-auto px-8 py-4 bg-brand-sand text-brand-dark font-semibold rounded-full hover:bg-white transition duration-300 shadow-xl active:scale-95"
+            class="w-full sm:w-auto px-8 py-4 bg-brand-sand text-brand-dark font-semibold rounded-full hover:bg-white transition-all duration-300 shadow-xl active:scale-95"
             data-i18n="hero_cta_classes"
             >View Classes</a
           >
@@ -356,7 +377,7 @@
 
     <!-- Our Vibe Section -->
     <!-- Reduced padding for mobile (py-16) vs desktop (md:py-24) -->
-    <section id="vibra" class="py-16 md:py-24 bg-white">
+    <section id="vibra" class="py-12 md:py-16 lg:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
@@ -457,7 +478,7 @@
     </section>
 
     <!-- Surf Sessions Section -->
-    <section id="clases" class="py-16 md:py-24 wave-pattern relative">
+    <section id="clases" class="py-12 md:py-16 lg:py-20 wave-pattern relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12 md:mb-20">
           <span
@@ -487,7 +508,7 @@
         >
           <!-- Group Card (MOVED TO FIRST POSITION) -->
           <div
-            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-brand-sand flex flex-col"
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-brand-sand flex flex-col"
           >
             <div class="relative h-56 md:h-64 overflow-hidden">
               <img
@@ -497,7 +518,7 @@
                 class="w-full h-full object-cover"
               />
               <div
-                class="absolute top-4 right-4 bg-brand-coral text-brand-dark text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md"
+                class="absolute top-4 right-4 bg-brand-coral text-white text-[10px] md:text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md"
                 data-i18n="card_group_badge"
               >
                 Group
@@ -570,7 +591,7 @@
 
           <!-- Private Card (MOVED TO SECOND POSITION) -->
           <div
-            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 border border-brand-sand flex flex-col"
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-brand-sand flex flex-col"
           >
             <div class="relative h-56 md:h-64 overflow-hidden">
               <img
@@ -713,7 +734,7 @@
               class="flex items-center group bg-white/5 p-6 rounded-xl hover:bg-brand-teal/20 transition active:scale-95"
             >
               <div
-                class="flex-shrink-0 bg-[#25D366] p-3 rounded-lg shadow-lg flex items-center justify-center w-12 h-12"
+                class="flex-shrink-0 bg-brand-whatsapp p-3 rounded-lg shadow-lg flex items-center justify-center w-12 h-12"
               >
                 <svg
                   class="w-6 h-6 text-white flex-shrink-0"
@@ -765,79 +786,138 @@
     </main>
 
     <!-- Footer -->
-    <footer
-      class="bg-brand-dark border-t border-brand-sand/10 text-brand-sand/60 py-12 pb-24 md:pb-12"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:items-stretch gap-8"
-      >
+    <footer class="bg-brand-dark text-white border-t border-gray-700 py-10 md:py-10 lg:py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
-          class="flex flex-col text-center md:text-left items-center md:items-start"
+          class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left"
         >
-          <span class="font-serif font-bold text-2xl text-brand-sand"
-            >The Backside House</span
+          <div
+            class="col-span-1 md:col-span-2 flex flex-col items-center md:items-start"
           >
-          <span
-            class="font-sans text-[0.6rem] tracking-[0.2em] text-brand-teal uppercase"
-            >Tamarindo • Costa Rica</span
-          >
-        </div>
-        <div class="text-center md:text-left">
-          <h4
-            class="font-bold text-lg mb-4 text-brand-coral"
-            data-i18n="footer_contact"
-          >
-            Contact
-          </h4>
-          <ul class="space-y-2 text-sm font-light">
-            <li class="flex items-center justify-center md:justify-start gap-2">
-              <i data-lucide="phone" class="h-4 w-4 flex-shrink-0"></i>
-              <a
-                href="https://wa.me/50663638563"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-brand-coral transition-colors"
-                >+506 6363 8563</a
+            <div
+              class="flex items-center justify-center md:justify-start gap-3 mb-4"
+            >
+              <img
+                src="img/tbh_logo.webp"
+                alt="The Backside House Logo Footer"
+                width="100"
+                height="40"
+                loading="lazy"
+                class="h-10 w-auto logo-img rounded-md"
+              />
+              <span
+                class="font-serif text-xl md:text-2xl font-bold tracking-tighter text-white"
+                >The Backside House
+                <span
+                  class="text-brand-coral font-sans text-base md:text-lg font-normal"
+                  >| Surf School</span
+                ></span
               >
-            </li>
-            <li class="flex items-center justify-center md:justify-start gap-2">
-              <i data-lucide="mail" class="h-4 w-4 flex-shrink-0"></i>
-              <a
-                href="mailto:thebacksidehouse@gmail.com"
-                class="hover:text-brand-coral transition-colors"
-                >thebacksidehouse@gmail.com</a
-              >
-            </li>
-            <li class="flex gap-4 mt-4 justify-center md:justify-start">
-              <a
-                href="https://www.instagram.com/thebacksidehouse/?hl=en"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-10 h-10 rounded-full bg-brand-sand/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
-                aria-label="Instagram"
-                ><i data-lucide="instagram" class="h-5 w-5"></i
-              ></a>
-              <a
-                href="https://www.tiktok.com/@thebacksidehouse"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-10 h-10 rounded-full bg-brand-sand/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
-                aria-label="TikTok"
-                ><svg
-                  class="h-5 w-5"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  aria-hidden="true"
+            </div>
+            <p
+              class="mt-4 text-gray-400 max-w-xs mx-auto md:mx-0"
+              data-i18n="footer_desc"
+            >
+              Come for the waves, stay for the vibe. Surf lessons in Tamarindo
+              with certified instructors.
+            </p>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4
+              class="font-bold text-lg mb-4 text-brand-coral"
+              data-i18n="footer_links"
+            >
+              Quick Links
+            </h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a
+                  href="index.html"
+                  class="hover:text-white transition-colors"
+                  data-i18n="nav_hostel"
+                  >Hostel</a
                 >
-                  <path
-                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
-                  /></svg
-              ></a>
-            </li>
-          </ul>
+              </li>
+              <li>
+                <a
+                  href="#vibra"
+                  class="hover:text-white transition-colors"
+                  data-i18n="nav_vibra"
+                  >Our Vibe</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#clases"
+                  class="hover:text-white transition-colors"
+                  data-i18n="nav_classes"
+                  >Classes</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4
+              class="font-bold text-lg mb-4 text-brand-coral"
+              data-i18n="footer_contact"
+            >
+              Contact
+            </h4>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center justify-center md:justify-start">
+                <i class="fab fa-whatsapp mr-2"></i> +506 6363 8563
+              </li>
+              <li class="flex items-center justify-center md:justify-start">
+                <i class="far fa-envelope mr-2"></i> thebacksidehouse@gmail.com
+              </li>
+              <li class="flex gap-4 mt-4 justify-center md:justify-start">
+                <a
+                  href="https://www.instagram.com/thebacksidehouse/?hl=en"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-action="track-social" data-social-platform="Instagram" data-social-location="Footer"
+                  class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
+                  aria-label="Instagram"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg
+                ></a>
+                <a
+                  href="https://www.tiktok.com/@thebacksidehouse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-action="track-social" data-social-platform="TikTok" data-social-location="Footer"
+                  class="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-brand-coral hover:text-white transition-colors"
+                  aria-label="TikTok"
+                  ><svg
+                    class="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                    /></svg
+                ></a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="text-sm font-light text-center md:text-left">
-          © 2026 The Backside House. Pura vida.
+        <div
+          class="border-t border-gray-700 mt-8 md:mt-10 lg:mt-12 pt-6 md:pt-8 text-center text-gray-500 text-sm"
+          data-i18n="footer_copy"
+        >
+          © 2026 The Backside House. All rights reserved.
         </div>
       </div>
     </footer>

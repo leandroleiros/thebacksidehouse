@@ -106,6 +106,10 @@ document.body.addEventListener('click', function (e) {
     if (!el) return;
     const action = el.getAttribute('data-action');
     switch (action) {
+        case 'scroll-top':
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            break;
         case 'toggle-menu':
             toggleMenu();
             break;

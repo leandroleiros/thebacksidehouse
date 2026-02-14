@@ -45,10 +45,6 @@
     overflow: auto;
 }
 
-.carousel-item {
-    scroll-snap-align: center;
-}
-
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
