@@ -92,37 +92,6 @@ document.body.addEventListener('click', function (e) {
             }
             break;
         }
-        case 'open-booking': {
-            e.preventDefault();
-            const modal = document.getElementById('booking-modal');
-            const iframe = document.getElementById('booking-iframe');
-            if (modal && iframe) {
-                iframe.src = 'https://new-booking.frontdeskmaster.com/?hostelId=YD9lhtYIMTZz02FnDlEYg77zeqjbyMxE';
-                modal.classList.remove('hidden');
-                modal.classList.add('flex');
-                document.body.style.overflow = 'hidden';
-            }
-            if (typeof trackBooking === 'function') {
-                trackBooking(el.getAttribute('data-track-label') || '');
-            }
-            break;
-        }
-        case 'close-booking': {
-            e.preventDefault();
-            const target = e.target;
-            const content = document.getElementById('booking-modal-content');
-            if (el.getAttribute('data-force') === 'true' || !content || !content.contains(target)) {
-                const bookingModal = document.getElementById('booking-modal');
-                const bookingIframe = document.getElementById('booking-iframe');
-                if (bookingModal) {
-                    bookingModal.classList.add('hidden');
-                    bookingModal.classList.remove('flex');
-                    document.body.style.overflow = '';
-                }
-                if (bookingIframe) bookingIframe.src = 'about:blank';
-            }
-            break;
-        }
         case 'close-wa-bubble': {
             const wa = document.getElementById('wa-bubble');
             if (wa) wa.style.display = 'none';

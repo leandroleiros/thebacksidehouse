@@ -27,16 +27,8 @@ function closeLightbox(event, force = false) {
 document.addEventListener('keydown', function(event) {
     if (event.key === "Escape") {
         const lightbox = document.getElementById('lightbox');
-        if (lightbox && !lightbox.classList.contains('hidden')) {
+        if (!lightbox.classList.contains('hidden')) {
             closeLightbox(null, true);
-        }
-        const bookingModal = document.getElementById('booking-modal');
-        const bookingIframe = document.getElementById('booking-iframe');
-        if (bookingModal && !bookingModal.classList.contains('hidden')) {
-            bookingModal.classList.add('hidden');
-            bookingModal.classList.remove('flex');
-            document.body.style.overflow = '';
-            if (bookingIframe) bookingIframe.src = 'about:blank';
         }
     }
 });
