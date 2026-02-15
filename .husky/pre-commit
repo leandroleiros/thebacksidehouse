@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+
+# ── Lint staged files (ESLint, Stylelint, HTMLHint) ────────────
+npx lint-staged || exit 1
+
+# ── Rebuild Tailwind CSS if source files are staged ────────────
+if git diff --cached --name-only | grep -qE '^css/(input|custom)\.css$'; then
+  echo "CSS source changed — rebuilding Tailwind..."
+  npm run build:css || exit 1
+  git add css/styles.css
+fi
+
+# ── Update SW cache name with content hash ─────────────────────
+echo "Updating service worker cache hash..."
+node scripts/cache-bust.js || exit 1
+git add sw.js
+
+# ── Update sitemap lastmod for changed HTML pages ──────────────
+if git diff --cached --name-only | grep -qE '\.html$'; then
+  echo "HTML changed — updating sitemap..."
+  node scripts/update-sitemap.js || exit 1
+  git add sitemap.xml
+fi

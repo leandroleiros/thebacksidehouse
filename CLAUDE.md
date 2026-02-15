@@ -3,13 +3,20 @@
 Web del hostel solo para mujeres y escuela de surf en Tamarindo, Costa Rica.
 Sitio estático: HTML5 vanilla + Tailwind CSS v4 + JavaScript ES6+ vanilla. Sin framework.
 
+- **URL de producción:** `https://thebacksidehouse.com`
+- **Navegadores objetivo:** modernos (últimos 2 años) — Chrome, Safari, Firefox, Samsung Internet. Sin soporte para IE ni navegadores legacy.
+
 ## Comandos principales
 
 ```bash
-npm run build:css   # Tailwind: css/input.css -> css/styles.css (minificado)
-npm run lint:css    # Stylelint sobre custom.css e input.css
-npm run lint:html   # HTMLHint sobre todos los archivos HTML
-npx eslint js/      # ESLint flat config sobre archivos JS
+npm run build:css       # Tailwind: css/input.css -> css/styles.css (minificado)
+npm run lint:css        # Stylelint sobre custom.css e input.css
+npm run lint:html       # HTMLHint sobre todos los archivos HTML
+npm run lint:js         # ESLint flat config sobre archivos JS
+npm run check:links     # Verificar que los links externos no estén rotos
+npm run check:deps      # Comparar versiones de librerías CDN con las últimas disponibles
+npm run cache:bust      # Actualizar hash del cache del Service Worker
+npm run sitemap:update  # Actualizar fechas lastmod del sitemap.xml
 ```
 
 ## Estructura del proyecto
@@ -42,6 +49,11 @@ js/
   sw-register.js    # Registro del Service Worker
 img/                # Imágenes (preferir formato WebP)
 data/ram-flow.json  # Datos de marketing y analytics
+scripts/
+  check-links.js    # Verificador de links externos rotos (manual)
+  check-deps.js     # Verificador de versiones CDN (manual)
+  cache-bust.js     # Cache busting del SW por content hash (pre-commit)
+  update-sitemap.js # Actualización de lastmod del sitemap (pre-commit)
 ```
 
 ## Stack tecnológico
@@ -54,6 +66,7 @@ data/ram-flow.json  # Datos de marketing y analytics
 - **Iconos:** Lucide (CDN, solo en surfclass.html)
 - **Analytics:** Google Tag Manager / gtag
 - **PWA:** Service Worker (`sw.js`) + Web App Manifest (`manifest.json`)
+- **Pre-commit:** Husky v9 + lint-staged (linting, build CSS, cache bust, sitemap update automáticos)
 - **Sin bundler** — scripts cargados con `<script defer>`
 
 ## Colores de marca (variables CSS)
@@ -99,7 +112,7 @@ Fuentes: `--font-sans: 'Poppins'`, `--font-serif: 'Playfair Display'`
 
 Dos idiomas: inglés (en) y español (es).
 Los objetos de traducción están en `translations.js` (index) y `translations-surfclass.js` (surfclass).
-`marca.html` aún no está internacionalizada.
+`marca.html` es una guía de branding y no requiere i18n.
 
 ## Seguridad (CSP)
 
@@ -110,11 +123,30 @@ La Content-Security-Policy se define en etiquetas `<meta>` del HTML. Reglas clav
 - `img-src 'self' data:` + solo CDNs específicos
 - `base-uri 'self'`, `form-action 'self'`
 
+## Deploy
+
+- **Hosting:** subida manual por FTP
+- **Pruebas locales:** `npx serve .` o abrir los HTML en el navegador (el Service Worker requiere un server)
+- **Flujo de trabajo Git:** `main` = producción (lo que se sube por FTP). Ramas `feature/...` para cambios puntuales, merge a `main` cuando estén listos.
+
+## Reservas (booking engine)
+
+- Actualmente los links de reserva apuntan a **Booking.com**
+- Pendiente: integración con **FrontDesk Master** (esperando respuesta del soporte de la plataforma)
+
+## Automatizaciones pre-commit
+
+Al hacer `git commit`, el hook de Husky ejecuta automáticamente:
+
+1. **Linting** (lint-staged) — ESLint en JS, Stylelint en CSS, HTMLHint en HTML. Si falla, el commit se cancela.
+2. **Build CSS** — Si `input.css` o `custom.css` están staged, recompila `styles.css` y lo incluye en el commit.
+3. **Cache bust del SW** — Genera un hash SHA-256 de los archivos precacheados y actualiza `CACHE_NAME` en `sw.js`.
+4. **Sitemap update** — Si algún HTML cambió, actualiza las fechas `<lastmod>` en `sitemap.xml`.
+
 ## Notas importantes
 
-- **Siempre recompilar CSS** tras cambiar `input.css` o `custom.css`: `npm run build:css`
-- **Sin framework de tests** — el linting es la principal puerta de calidad
-- **styles.css es generado** — nunca editarlo directamente; está en `.gitignore`
-- **Imágenes:** preferir WebP; los PNG grandes existen como fallback
+- **styles.css es generado** — nunca editarlo directamente; el hook pre-commit lo recompila automáticamente
+- **Sin framework de tests** — el linting (automático en pre-commit) es la principal puerta de calidad
+- **Imágenes:** preferir WebP; los PNG grandes existen como fallback. Al agregar o modificar imágenes, optimizar y convertir a WebP antes de commitear.
 - **Schema.org** JSON-LD está embebido en las secciones `<head>` del HTML
-- **PWA:** el Service Worker usa network-first para HTML y stale-while-revalidate para assets
+- **PWA:** el Service Worker usa network-first para HTML y stale-while-revalidate para assets. El hash del cache se actualiza automáticamente en cada commit.
