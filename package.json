@@ -6,7 +6,19 @@
     "build:css": "tailwindcss -i ./css/input.css -o ./css/styles.css --minify",
     "lint:css": "stylelint css/custom.css css/input.css",
     "lint:html": "htmlhint index.html surfclass.html marca.html",
+    "lint:js": "eslint js/",
+    "check:links": "node scripts/check-links.js",
+    "check:deps": "node scripts/check-deps.js",
+    "cache:bust": "node scripts/cache-bust.js",
+    "sitemap:update": "node scripts/update-sitemap.js",
+    "prepare": "husky",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "js/!(motion-init).js": "eslint",
+    "css/custom.css": "stylelint",
+    "css/input.css": "stylelint",
+    "*.html": "htmlhint"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +30,8 @@
     "eslint": "^10.0.0",
     "globals": "^17.3.0",
     "htmlhint": "^1.8.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "sharp-cli": "^5.2.0",
     "stylelint": "^17.1.1",
     "stylelint-config-standard": "^40.0.0",
