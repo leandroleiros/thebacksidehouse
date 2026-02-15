@@ -1,13 +1,8 @@
 /**
  * Motion One — scroll-triggered animations & microinteractions
- * Carga como ES module dinámico desde CDN. Si el CDN falla, los elementos
- * se muestran normalmente (no se ocultan sin confirmación de carga).
- *
- * Uso: los elementos con [data-motion] se animan al entrar en viewport.
- *   data-motion="fade-up"     → fade + translateY
- *   data-motion="fade-in"     → solo opacity
- *   data-motion="scale-in"    → opacity + scale
- *   data-motion="stagger"     → hijos directos con stagger
+ * Elements with [data-motion] are pre-hidden via CSS (custom.css).
+ * This script animates them once on viewport entry.
+ * If CDN fails, CSS fallback reveals them after 3s.
  */
 
 /* ── Respetar prefers-reduced-motion ── */
@@ -18,10 +13,12 @@ const prefersReduced = window.matchMedia(
 if (!prefersReduced) {
     import("https://cdn.jsdelivr.net/npm/motion@11.13.5/+esm")
         .then(({ animate, inView, stagger }) => {
+            /* Signal to CSS: Motion loaded, cancel fallback reveal */
+            document.documentElement.classList.add("motion-ready");
             initMotion(animate, inView, stagger);
         })
         .catch(() => {
-            /* CDN caído: no ocultar nada, los elementos quedan visibles */
+            /* CDN down: CSS fallback animation will reveal elements after 3s */
         });
 }
 
@@ -45,40 +42,48 @@ function initMotion(animate, inView, stagger) {
         },
     };
 
-    /* Ocultar elementos individuales y registrar inView */
+    /* Individual element animations — animate ONCE only */
     Object.entries(animationConfig).forEach(([type, config]) => {
         const selector = `[data-motion='${type}']`;
 
-        /* Ocultar DESPUÉS de confirmar que Motion cargó */
         document.querySelectorAll(selector).forEach((el) => {
-            el.style.opacity = "0";
             el.style.willChange = "opacity, transform";
         });
 
-        /* inView dispara tanto para elementos ya visibles como al scrollear */
         inView(selector, (info) => {
-            animate(info.target, config.keyframes, config.options).then(() => {
-                info.target.style.willChange = "auto";
+            const el = info.target;
+            if (el.dataset.motionDone) return;
+            el.dataset.motionDone = "true";
+
+            animate(el, config.keyframes, config.options).then(() => {
+                el.style.willChange = "auto";
+                el.style.opacity = "1";
             });
         }, { amount: 0.15 });
     });
 
-    /* stagger: ocultar HIJOS y animar con delay escalonado */
+    /* stagger: animate children ONCE only */
     document.querySelectorAll("[data-motion='stagger']").forEach((container) => {
         Array.from(container.children).forEach((child) => {
-            child.style.opacity = "0";
             child.style.willChange = "opacity, transform";
         });
     });
 
     inView("[data-motion='stagger']", (info) => {
-        const children = Array.from(info.target.children);
+        const container = info.target;
+        if (container.dataset.motionDone) return;
+        container.dataset.motionDone = "true";
+
+        const children = Array.from(container.children);
         animate(
             children,
             { opacity: [0, 1], transform: ["translateY(20px)", "translateY(0)"] },
             { duration: 0.5, delay: stagger(0.15), easing: [0.25, 0.1, 0.25, 1] }
         ).then(() => {
-            children.forEach((child) => { child.style.willChange = "auto"; });
+            children.forEach((child) => {
+                child.style.willChange = "auto";
+                child.style.opacity = "1";
+            });
         });
     }, { amount: 0.1 });
 

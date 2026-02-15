@@ -47,7 +47,7 @@
     <!-- Slide 1: Outdoor Kitchen -->
     <image:image>
       <image:loc>https://thebacksidehouse.com/img/relax.webp</image:loc>
-      <image:title>Communal Outdoor Kitchen & Bar</image:title>
+      <image:title>Communal Outdoor Kitchen &amp; Bar</image:title>
       <image:caption>Relaxed atmosphere for socializing in our open-air kitchen.</image:caption>
     </image:image>
 
@@ -108,12 +108,12 @@
 
     <image:image>
       <image:loc>https://thebacksidehouse.com/img/bienestar.webp</image:loc>
-      <image:title>Wellness & Yoga at The Backside House</image:title>
+      <image:title>Wellness &amp; Yoga at The Backside House</image:title>
     </image:image>
 
     <image:image>
       <image:loc>https://thebacksidehouse.com/img/friendship.webp</image:loc>
-      <image:title>Friendship & Community at Women Only Hostel</image:title>
+      <image:title>Friendship &amp; Community at Women Only Hostel</image:title>
     </image:image>
 
     <image:image>

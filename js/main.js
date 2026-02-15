@@ -3,20 +3,6 @@
           trackScrollDepth, updateNavbarOnScroll, handleImageError, Lenis */
 
 // ======================
-// INTERSECTION OBSERVER (Animaciones al scroll)
-// ======================
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate-on-scroll');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.1
-});
-
-// ======================
 // SCROLL HANDLER (RAF batched)
 // ======================
 let navbarScrollTicking = false;
@@ -146,11 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateContent();
-
-    // Animar elementos
-    document.querySelectorAll('.vibe-card').forEach(card => {
-        observer.observe(card);
-    });
 
     // Globo WhatsApp
     const waBubble = document.getElementById('wa-bubble');
