@@ -30,13 +30,5 @@ document.addEventListener('keydown', function(event) {
         if (lightbox && !lightbox.classList.contains('hidden')) {
             closeLightbox(null, true);
         }
-        const bookingModal = document.getElementById('booking-modal');
-        const bookingIframe = document.getElementById('booking-iframe');
-        if (bookingModal && !bookingModal.classList.contains('hidden')) {
-            bookingModal.classList.add('hidden');
-            bookingModal.classList.remove('flex');
-            document.body.style.overflow = '';
-            if (bookingIframe) bookingIframe.src = 'about:blank';
-        }
     }
 });

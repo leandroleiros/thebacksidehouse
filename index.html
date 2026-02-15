@@ -50,7 +50,7 @@
         default-src 'self';
         base-uri 'self';
         form-action 'self';
-        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net;
+        script-src 'self' https://www.googletagmanager.com https://cdnjs.cloudflare.com https://unpkg.com https://cdn.jsdelivr.net https://new-booking.frontdeskmaster.com;
         style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
         img-src 'self' data: https://flagcdn.com https://randomuser.me https://placehold.co https://thebacksidehouse.com;
         font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;
@@ -179,9 +179,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
     />
-
-    <!-- 3. PREFETCH BOOKING -->
-    <link rel="prefetch" href="https://new-booking.frontdeskmaster.com/?hostelId=YD9lhtYIMTZz02FnDlEYg77zeqjbyMxE" />
 
     <!-- Iconos (carga directa para compatibilidad con CSP sin unsafe-inline) -->
     <link
@@ -451,9 +448,9 @@
         >
           <button
             type="button"
-            data-action="open-booking"
+            data-action="track-booking"
             data-track-label="Hero Section"
-            class="w-full sm:w-auto px-8 py-4 bg-brand-coral text-white text-base md:text-lg rounded-full font-semibold shadow-xl hover:bg-brand-coralhover transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer"
+            class="fdm-bookingengine-startbtn w-full sm:w-auto px-8 py-4 bg-brand-coral text-white text-base md:text-lg rounded-full font-semibold shadow-xl hover:bg-brand-coralhover transition-all transform hover:scale-105 flex items-center justify-center cursor-pointer"
             data-i18n="hero_cta_primary"
           >
             Check Availability
@@ -1037,9 +1034,9 @@
 
             <button
               type="button"
-              data-action="open-booking"
+              data-action="track-booking"
               data-track-label="Habitaciones Section"
-              class="inline-block bg-brand-dark text-white px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium hover:bg-brand-teal transition-colors shadow-lg min-h-[44px] flex items-center justify-center text-base md:text-lg cursor-pointer"
+              class="fdm-bookingengine-startbtn inline-block bg-brand-dark text-white px-6 py-3 md:px-8 md:py-3 rounded-lg font-medium hover:bg-brand-teal transition-colors shadow-lg min-h-[44px] flex items-center justify-center text-base md:text-lg cursor-pointer"
               data-i18n="rooms_cta"
             >
               Check Prices & Availability
@@ -1627,33 +1624,9 @@
       </svg>
     </a>
 
-    <!-- BOOKING MODAL (FrontDesk Master) -->
-    <div
-      id="booking-modal"
-      class="fixed inset-0 z-[100] bg-black/80 hidden items-center justify-center p-4 backdrop-blur-sm"
-      data-action="close-booking"
-    >
-      <button
-        type="button"
-        class="absolute top-3 right-3 md:top-4 md:right-4 text-white hover:text-brand-coral transition-colors z-[101] min-w-[44px] min-h-[44px] flex items-center justify-center p-2"
-        data-action="close-booking"
-        data-force="true"
-        aria-label="Close booking"
-      >
-        <i class="fas fa-times text-3xl md:text-4xl"></i>
-      </button>
-      <div
-        class="relative w-full max-w-4xl h-[85vh] bg-white rounded-2xl overflow-hidden shadow-2xl animate-fade-in"
-        id="booking-modal-content"
-      >
-        <iframe
-          id="booking-iframe"
-          src="about:blank"
-          title="FrontDesk Master Booking Engine"
-          class="w-full h-full border-0"
-        ></iframe>
-      </div>
-    </div>
+    <!-- FrontDesk Master Booking Engine Widget -->
+    <input type="hidden" id="fdm-bookingengine-hotelid" name="fdm-bookingengine-hotelid" value="YD9lhtYIMTZz02FnDlEYg77zeqjbyMxE">
+    <script async src="https://new-booking.frontdeskmaster.com/Scripts/be-iframe/be-iframe.js"></script>
 
     <!-- Lenis smooth scroll -->
     <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
