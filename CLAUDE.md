@@ -3,6 +3,9 @@
 Web del hostel solo para mujeres y escuela de surf en Tamarindo, Costa Rica.
 Sitio estático: HTML5 vanilla + Tailwind CSS v4 + JavaScript ES6+ vanilla. Sin framework.
 
+- **URL de producción:** `https://thebacksidehouse.com`
+- **Navegadores objetivo:** modernos (últimos 2 años) — Chrome, Safari, Firefox, Samsung Internet. Sin soporte para IE ni navegadores legacy.
+
 ## Comandos principales
 
 ```bash
