@@ -102,44 +102,6 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
 }
 
 /* ================================================================
-   MOTION-ONE: Pre-hide elements to prevent FOUC.
-   Elements start hidden via CSS. If Motion One loads, JS adds
-   .motion-ready to <html> and cancels the fallback.
-   If CDN fails, fallback @keyframes reveals content after 3s.
-   ================================================================ */
-@media (prefers-reduced-motion: no-preference) {
-    [data-motion="fade-up"],
-    [data-motion="fade-in"],
-    [data-motion="scale-in"] {
-        opacity: 0;
-    }
-
-    [data-motion="stagger"] > * {
-        opacity: 0;
-    }
-
-    /* Fallback: si Motion One no carga, revelar con fade tras 3s */
-    @keyframes motionFallbackReveal {
-        to { opacity: 1; }
-    }
-
-    [data-motion="fade-up"],
-    [data-motion="fade-in"],
-    [data-motion="scale-in"],
-    [data-motion="stagger"] > * {
-        animation: motionFallbackReveal 0.4s ease-out 3s both;
-    }
-
-    /* JS confirma que Motion cargó → cancelar fallback */
-    .motion-ready [data-motion="fade-up"],
-    .motion-ready [data-motion="fade-in"],
-    .motion-ready [data-motion="scale-in"],
-    .motion-ready [data-motion="stagger"] > * {
-        animation: none;
-    }
-}
-
-/* ================================================================
    COMPONENTES
    ================================================================ */
 

@@ -1,8 +1,7 @@
 /**
  * Motion One — scroll-triggered animations & microinteractions
- * Elements with [data-motion] are pre-hidden via CSS (custom.css).
- * This script animates them once on viewport entry.
- * If CDN fails, CSS fallback reveals them after 3s.
+ * Only hides elements below the fold (off-screen) when Motion loads.
+ * Elements already visible stay visible. If CDN fails, nothing is hidden.
  */
 
 /* ── Respetar prefers-reduced-motion ── */
@@ -13,13 +12,17 @@ const prefersReduced = window.matchMedia(
 if (!prefersReduced) {
     import("https://cdn.jsdelivr.net/npm/motion@11.13.5/+esm")
         .then(({ animate, inView, stagger }) => {
-            /* Signal to CSS: Motion loaded, cancel fallback reveal */
-            document.documentElement.classList.add("motion-ready");
             initMotion(animate, inView, stagger);
         })
         .catch(() => {
-            /* CDN down: CSS fallback animation will reveal elements after 3s */
+            /* CDN down: everything stays visible by default */
         });
+}
+
+/** Check if element is currently in the viewport */
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
 }
 
 function initMotion(animate, inView, stagger) {
@@ -47,7 +50,12 @@ function initMotion(animate, inView, stagger) {
         const selector = `[data-motion='${type}']`;
 
         document.querySelectorAll(selector).forEach((el) => {
-            el.style.willChange = "opacity, transform";
+            if (isInViewport(el)) {
+                el.dataset.motionDone = "true";
+            } else {
+                el.style.opacity = "0";
+                el.style.willChange = "opacity, transform";
+            }
         });
 
         inView(selector, (info) => {
@@ -64,9 +72,14 @@ function initMotion(animate, inView, stagger) {
 
     /* stagger: animate children ONCE only */
     document.querySelectorAll("[data-motion='stagger']").forEach((container) => {
-        Array.from(container.children).forEach((child) => {
-            child.style.willChange = "opacity, transform";
-        });
+        if (isInViewport(container)) {
+            container.dataset.motionDone = "true";
+        } else {
+            Array.from(container.children).forEach((child) => {
+                child.style.opacity = "0";
+                child.style.willChange = "opacity, transform";
+            });
+        }
     });
 
     inView("[data-motion='stagger']", (info) => {
