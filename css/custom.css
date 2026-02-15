@@ -127,7 +127,7 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
     [data-motion="fade-in"],
     [data-motion="scale-in"],
     [data-motion="stagger"] > * {
-        animation: motionFallbackReveal 0.4s ease-out 3s both;
+        animation: motionFallbackReveal 0.4s ease-out 1s both;
     }
 
     /* JS confirma que Motion cargó → cancelar fallback */

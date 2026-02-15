@@ -87,6 +87,21 @@ function initMotion(animate, inView, stagger) {
         });
     }, { amount: 0.1 });
 
+    /* Safety net: reveal any element still hidden after 2s */
+    setTimeout(() => {
+        document.querySelectorAll("[data-motion]").forEach((el) => {
+            if (!el.dataset.motionDone) {
+                el.style.opacity = "1";
+                el.dataset.motionDone = "true";
+            }
+            Array.from(el.children).forEach((child) => {
+                if (getComputedStyle(child).opacity === "0") {
+                    child.style.opacity = "1";
+                }
+            });
+        });
+    }, 2000);
+
     /* ────────────────────────────────────────────────
        2. MICROINTERACCIONES EN CARDS (hover lift)
        ──────────────────────────────────────────────── */
