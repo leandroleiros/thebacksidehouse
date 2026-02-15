@@ -2,7 +2,6 @@
 node_modules/
 
 # CSS compilado (regenerar con: npm run build:css)
-css/styles.css
 css/styles.css.map
 
 # Archivos de backup/copia
