@@ -99,7 +99,7 @@ Fuentes: `--font-sans: 'Poppins'`, `--font-serif: 'Playfair Display'`
 
 Dos idiomas: inglés (en) y español (es).
 Los objetos de traducción están en `translations.js` (index) y `translations-surfclass.js` (surfclass).
-`marca.html` aún no está internacionalizada.
+`marca.html` es una guía de branding y no requiere i18n.
 
 ## Seguridad (CSP)
 
@@ -110,11 +110,22 @@ La Content-Security-Policy se define en etiquetas `<meta>` del HTML. Reglas clav
 - `img-src 'self' data:` + solo CDNs específicos
 - `base-uri 'self'`, `form-action 'self'`
 
+## Deploy
+
+- **Hosting:** subida manual por FTP
+- **Pruebas locales:** `npx serve .` o abrir los HTML en el navegador (el Service Worker requiere un server)
+- **Flujo de trabajo Git:** `main` = producción (lo que se sube por FTP). Ramas `feature/...` para cambios puntuales, merge a `main` cuando estén listos.
+
+## Reservas (booking engine)
+
+- Actualmente los links de reserva apuntan a **Booking.com**
+- Pendiente: integración con **FrontDesk Master** (esperando respuesta del soporte de la plataforma)
+
 ## Notas importantes
 
 - **Siempre recompilar CSS** tras cambiar `input.css` o `custom.css`: `npm run build:css`
 - **Sin framework de tests** — el linting es la principal puerta de calidad
 - **styles.css es generado** — nunca editarlo directamente; está en `.gitignore`
-- **Imágenes:** preferir WebP; los PNG grandes existen como fallback
+- **Imágenes:** preferir WebP; los PNG grandes existen como fallback. Al agregar o modificar imágenes, optimizar y convertir a WebP antes de commitear.
 - **Schema.org** JSON-LD está embebido en las secciones `<head>` del HTML
 - **PWA:** el Service Worker usa network-first para HTML y stale-while-revalidate para assets
