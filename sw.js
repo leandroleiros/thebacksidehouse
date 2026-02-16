@@ -1,7 +1,7 @@
 // Service Worker — The Backside House PWA
 // Strategy: stale-while-revalidate for assets, network-first for HTML
 
-const CACHE_NAME = "tbh-363f8d01";
+const CACHE_NAME = "tbh-ed0f4614";
 const PRECACHE_URLS = [
   "/",
   "/index.html",
