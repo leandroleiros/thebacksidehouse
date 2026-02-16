@@ -109,7 +109,7 @@ a[data-action="track-social"][data-social-platform="Instagram"][data-social-loca
 .back-to-top-btn {
     position: fixed;
     bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
-    right: 1rem;
+    right: 1.5rem;
     z-index: 50;
     width: 3rem;
     height: 3rem;
